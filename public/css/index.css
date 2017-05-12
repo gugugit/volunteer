@@ -1,0 +1,40 @@
+body {
+  padding-top: 50px;/*有顶部固定导航条时设置*/
+  padding-bottom: 50px;/*有底部固定导航条时设置*/
+}
+.footer {
+  position: absolute;
+  width: 100%;
+  padding-top: 20px;
+  background: #333;
+}
+.footer a{
+  display: inline-block;
+  margin-bottom: 3px;
+  color: #0c9;
+  font-size: 14px;
+}
+.footer-col {
+  min-height: 150px;
+}
+.col-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #0c9;
+}
+
+.footer-slogan {
+  margin: 0 0 12px 15px;
+  color: #0c9;
+  font-size: 28px;
+}
+.copyright {
+  height: 50px;
+  line-height: 50px;
+  background: #171919;
+  margin-top: 20px;
+  color: #666;
+}
+.text-center {
+  text-align: center;
+}

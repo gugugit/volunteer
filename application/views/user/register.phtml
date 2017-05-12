@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>用户注册</title>
+    <link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+
+<body>
+<!--head start -->
+<?php include PATH_TPL.'/head.phtml'?>
+<!--head end -->
+
+<!--register----content-->
+<div class="container interval">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="email">邮箱</label>
+                    <input type="email" class="form-control" id="email" placeholder="请输入邮箱">
+                </div>
+                <div class="form-group">
+                    <label for="password">密码</label>
+                    <input type="password" class="form-control" id="password" placeholder="请输入密码">
+                </div>
+                <div class="form-group">
+                    <label for="repassword">重输密码</label>
+                    <input type="password" class="form-control" id="repassword" placeholder="请重复输入密码">
+                </div>
+                <button type="submit" class="btn btn-success btn-block">立即注册</button>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+</div>
+
+
+
+<!--foot start-->
+<?php include PATH_TPL.'/foot.phtml'?>
+<!--foot end-->
+<!--代码-->
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery.bootstrap-dropdown-hover.min.js"></script>
+<script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/index-dropdown.js"></script>
+
+
+</body>
+</html>

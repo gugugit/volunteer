@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>用户登录</title>
+    <link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+<!--head start -->
+<?php include PATH_TPL.'/head.phtml'?>
+<!--head end -->
+
+<!--login----content-->
+<div class="container interval">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="email">邮箱</label>
+                    <input type="email" class="form-control" id="email" placeholder="请输入邮箱">
+                </div>
+                <div class="form-group">
+                    <label for="password">密码</label>
+                    <input type="password" class="form-control" id="password" placeholder="请输入密码">
+                </div>
+                <div class="form-group">
+                    <div class="keep-pwd checkbox">
+                        <label>
+                            <input type="checkbox"> 记住密码
+                        </label>
+                        <a href="#" class="forget-pwd" style="text-decoration: none;">忘记密码？</a>
+                    </div>
+
+                </div>
+                <button type="submit" class="btn btn-success btn-block">立即登录</button>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+</div>
+
+
+
+<!--foot start-->
+<?php include PATH_TPL.'/foot.phtml'?>
+<!--foot end-->
+<!--代码-->
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery.bootstrap-dropdown-hover.min.js"></script>
+<script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/index-dropdown.js"></script>
+
+
+</body>
+</html>
