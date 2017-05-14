@@ -14,6 +14,10 @@ class IndexController extends Yaf_Controller_Abstract {
     public function indexAction() {//默认Action
 
 //        $this->getView()->assign("content", "你好，我是首页");
+        $mActivity = new ActivityModel();
+        $datas = $mActivity->query('select * from activity');
+//        var_dump($datas);
+        $this->getView()->assign("datas", $datas);
 
 
     }

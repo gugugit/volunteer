@@ -87,78 +87,22 @@
 <div class="container">
     <!--缩略图列表开始-->
     <div class="row">
-
+        <? foreach ($datas as $v){?>
         <div class="col-xs-6 col-md-3 beforeIn">
 
             <a href="#" class="thumbnail">
-                <img src="/img/1.jpg" style="height: 180px; width: 100%; display: block;" alt="">
+                <img src="<?=$v['img']?>" style="height: 180px; width: 100%; display: block;" alt="">
             </a>
 
             <div class="caption afterIn">
-                <h2>Flowers</h2>
-                <p>Flowers are so inconsistent! But I was too young to know how to love her</p>
+                <h2><?=$v['name']?></h2>
+                <p><?=$v['desc']?></p>
                 <p>
-                    <a href="##" class="btn btn-primary">立即志愿</a>
+                    <a href="#" class="btn btn-primary">立即报名</a>
                 </p>
             </div>
         </div>
-        <div class="col-xs-6 col-md-3 beforeIn">
-
-            <a href="#" class="thumbnail">
-                <img src="/img/2.jpg" style="height: 180px; width: 100%; display: block;" alt="">
-            </a>
-
-            <div class="caption afterIn">
-                <h2>Flowers</h2>
-                <p>Flowers are so inconsistent! But I was too young to know how to love her</p>
-                <p>
-                    <a href="##" class="btn btn-primary">立即志愿</a>
-                </p>
-            </div>
-        </div>
-        <div class="col-xs-6 col-md-3 beforeIn">
-
-            <a href="#" class="thumbnail">
-                <img src="/img/3.jpg" style="height: 180px; width: 100%; display: block;" alt="">
-            </a>
-
-            <div class="caption afterIn">
-                <h2>Flowers</h2>
-                <p>Flowers are so inconsistent! But I was too young to know how to love her</p>
-                <p>
-                    <a href="##" class="btn btn-primary">立即志愿</a>
-                </p>
-            </div>
-        </div>
-        <div class="col-xs-6 col-md-3 beforeIn">
-
-            <a href="#" class="thumbnail">
-                <img src="/img/4.jpg" style="height: 180px; width: 100%; display: block;" alt="">
-            </a>
-
-            <div class="caption afterIn">
-                <h2>Flowers</h2>
-                <p>Flowers are so inconsistent! But I was too young to know how to love her</p>
-                <p>
-                    <a href="##" class="btn btn-primary">立即志愿</a>
-                </p>
-            </div>
-        </div>
-        <div class="col-xs-6 col-md-3 beforeIn">
-
-            <a href="#" class="thumbnail">
-                <img src="/img/4.jpg" style="height: 180px; width: 100%; display: block;" alt="">
-            </a>
-
-            <div class="caption afterIn">
-                <h2>Flowers</h2>
-                <p>Flowers are so inconsistent! But I was too young to know how to love her</p>
-                <p>
-                    <a href="##" class="btn btn-primary">立即志愿</a>
-                </p>
-            </div>
-        </div>
-
+        <?}?>
     </div>
 </div>
 
