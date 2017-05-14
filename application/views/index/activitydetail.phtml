@@ -5,12 +5,16 @@
     <title>活动详情</title>
     <meta name="keywords" content="hello" />
     <meta name="description" content="hello" />
+    <link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/common.css" />
     <link rel="stylesheet" href="/css/detail.css" />
 </head>
 <body>
-
-<div id="wrapper">
+<!--head start -->
+<?php include PATH_TPL.'/head.phtml'?>
+<!--head end -->
+<div id="wrapper" style="padding:5%;">
     <div id="pager">
         <div class="zyd-top w-1000 cf">
             <div class="media f_l">
@@ -25,7 +29,7 @@
                     <span class="vip-price"><?=$value['desc']?></span>
                 </li>
                 <li class="cf last">
-                    <a class="greenbtn2" href="#" target="_blank" lessonid="61" price="19.00" data-zhiye-id="">立即报名</a>
+                    <a class="greenbtn2" href="#" style="text-decoration: none;" data-zhiye-id="">立即报名</a>
                     <p class="time">
                         <span>目前<?=$value['already_num']?>人报名</span>
                         <span>志愿时长：<?=$value['service_hour']?> 小时</span>
@@ -40,8 +44,7 @@
             <div class="zyd-tab mar-t20 mar-r20 f_l">
                 <div id="fixed" style="position: relative; top: 0px;" class="">
                     <ul class="tabnav cf">
-                        <li class="active"> 志愿详情 </li>
-                        <li class="show"> <a class="greenbtn2" href="#" target="_blank" lessonid="61" price="19.00" data-zhiye-id="">立即报名</a> </li>
+                        <li class="active">志愿详情</li>
                     </ul>
                 </div>
                 <!--tabcon -->
@@ -72,5 +75,9 @@
 
         </div>
     </div>
+</div>
+    <!--foot start-->
+    <?php include PATH_TPL.'/foot.phtml'?>
+    <!--foot end-->
 </body>
 </html>
