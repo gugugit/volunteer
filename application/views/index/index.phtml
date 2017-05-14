@@ -98,8 +98,10 @@
                 <h2><?=$v['name']?></h2>
                 <p><?=$v['desc']?></p>
                 <p>
-                    <a href="#" class="btn btn-primary">立即报名</a>
+                    <a href="/index/index/activitydetail/id/<?=$v['id']?>" class="btn btn-primary">立即报名</a>
                 </p>
+                <p>计划招募：<?=$v['limit_num']?>人 | 已经招募：<?=$v['already_num']?>人</p>
+
             </div>
         </div>
         <?}?>
