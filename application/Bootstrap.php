@@ -24,14 +24,26 @@ class Bootstrap extends Yaf_Bootstrap_Abstract{
         Yaf_Registry::set("config",$this->config);
         define('PATH_APP', $this->config->application->directory);
         define('PATH_TPL', PATH_APP . 'views');
-
     }
 
+    /**
+     * 默认模块
+    */
     public function _initDefaultName(Yaf_Dispatcher $dispatcher){
 
         $dispatcher->setDefaultModule("Index")->setDefaultController("Index")->setDefaultAction("index");
 
     }
+
+    /**
+     * 模版
+    */
+    public function _initLayout(Yaf_Dispatcher $dispatcher)
+    {
+        $layout = new Helper_Layout(APP_PATH . "/application/views/layouts");
+        $dispatcher->setView($layout);
+    }
+
 
 //Yaf支持用户定义插件来扩展Yaf的功能, 这些插件都是一些类.
 //它们都必须继承自Yaf_Plugin_Abstract. 插件要发挥功效, 也必须现实的在Yaf中进行注册,

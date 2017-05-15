@@ -6,15 +6,15 @@
  * Time: 17:37
  */
 
-class IndexController extends Yaf_Controller_Abstract {
+class IndexController extends Controller_Base {
 
     /**
      * 首页
     */
     public function indexAction() {//默认Action
         $mActivity = new ActivityModel();
-        $datas = $mActivity->query('select * from activity');
-        $this->getView()->assign("datas", $datas);
+        $datas = $mActivity->fList();
+        $this->assign("datas",$datas);
     }
 
     /**
@@ -24,9 +24,8 @@ class IndexController extends Yaf_Controller_Abstract {
 
         $mActivity = new ActivityModel();
         if(!($id = (int)$id) || !$value = $mActivity->fRow($id)){
-            echo "您访问的页面不存在";
+            echo "您访问的页面不存在";//这里有问题bug。
         }
-        $this->getView()->assign("value", $value);
-
+        $this->assign("value",$value);
     }
 }

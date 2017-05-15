@@ -11,7 +11,7 @@ abstract class Controller_Base extends Yaf_Controller_Abstract{
      * 布局
      * @var string
      */
-    protected $layout = 'public';
+    protected $layout;
 
     /**
      * SESSION
@@ -37,9 +37,10 @@ abstract class Controller_Base extends Yaf_Controller_Abstract{
      */
     protected function init()
     {
-        # 全局配置
-        $this->config = Yaf_Application::app()->getConfig();
-        define('PATH_TPL', $this->config->application->directory . 'views');
+//        # 全局配置
+//        $this->config = Yaf_Application::app()->getConfig();
+//        define('PATH_TPL', $this->config->application->directory . 'views');
+
         # Request & Ajax
         $this->requests = $this->getRequest();
         define('IS_AJAX', $this->requests->isXmlHttpRequest());
@@ -50,7 +51,8 @@ abstract class Controller_Base extends Yaf_Controller_Abstract{
             (2 & $this->_auth) && $this->_v_login();
         }
         # Layout
-        $this->layout && $this->getView()->setLayout($this->layout);
+//        $this->layout && $this->getView()->setLayout($this->layout);
+        $this->getView()->setLayout($this->layout) && $this->layout;
     }
 
     /**

@@ -1,0 +1,5 @@
+@-moz-document url-prefix() {
+	.form-control{height:34px;}
+}
+form .dropdown-menu{right:0}
+#kw{float:left}
