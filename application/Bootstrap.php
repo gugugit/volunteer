@@ -23,7 +23,7 @@ class Bootstrap extends Yaf_Bootstrap_Abstract{
         $this->config = Yaf_Application::app()->getConfig();
         Yaf_Registry::set("config",$this->config);
         define('PATH_APP', $this->config->application->directory);
-        define('PATH_TPL', PATH_APP . '/views');
+        define('PATH_TPL', PATH_APP . 'views');
 
     }
 

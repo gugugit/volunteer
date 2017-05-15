@@ -11,7 +11,7 @@ class UserController extends Yaf_Controller_Abstract{
     */
     public function indexAction()
     {
-        $this->getView()->assign("content", "Hello User的视图");
+//        $this->getView()->assign("content", "Hello User的视图");
     }
 
     /**
