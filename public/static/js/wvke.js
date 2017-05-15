@@ -1,13 +1,13 @@
 WVKE = {
-	//手机验证码
-	mobilecode: function (id, opt) {
-		WVKE.formid = '#form-'+id;
-		$.post('/user/public/mobilecode/opt/'+opt, $(WVKE.formid).serialize(), WVKE.ajax_cb, 'json');
-	},
-	//图片验证码
-	captcha: function () {
-		$('.captcha').attr('src', '/index/index/captcha?t=' + Math.random());
-	},
+	// //手机验证码
+	// mobilecode: function (id, opt) {
+	// 	WVKE.formid = '#form-'+id;
+	// 	$.post('/user/public/mobilecode/opt/'+opt, $(WVKE.formid).serialize(), WVKE.ajax_cb, 'json');
+	// },
+	// //图片验证码
+	// captcha: function () {
+	// 	$('.captcha').attr('src', '/index/index/captcha?t=' + Math.random());
+	// },
 	//表单提交事件
 	formsubmit: function (id, url, cb) {
 		WVKE.formid = '#form-'+id;
@@ -46,13 +46,13 @@ WVKE = {
 			//提示窗报错
 			else alert(d.msg);
 		}
-	},
-	//城市联动
-	citydata: function (pid, id, cur){
-		$("#"+id).empty();
-		for(var i in CITY[pid]){
-			$("#"+id).append("<option value='"+i+"'>"+CITY[pid][i]["name"]+"</option>");
-		}
-		if(cur) $('#'+id).val(cur);
 	}
+	//城市联动
+	// citydata: function (pid, id, cur){
+	// 	$("#"+id).empty();
+	// 	for(var i in CITY[pid]){
+	// 		$("#"+id).append("<option value='"+i+"'>"+CITY[pid][i]["name"]+"</option>");
+	// 	}
+	// 	if(cur) $('#'+id).val(cur);
+	// }
 };
