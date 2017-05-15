@@ -36,8 +36,8 @@ class Validate{
      */
     static function is_passwd($key, $val, $min = 0, $max = 0){
         if(empty($_POST[$key])) return $val.'不能为空';
-        if($min && strlen($_POST['pw']) < $min) return $val.'不能少于8位';
-        if($max && strlen($_POST['pw']) > $max) return $val.'不要超过32位';
+        if($min && strlen($_POST['password']) < $min) return $val.'不能少于8位';
+        if($max && strlen($_POST['password']) > $max) return $val.'不要超过32位';
         return '';
     }
 
