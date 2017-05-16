@@ -20,15 +20,15 @@
         <div class="col-md-4">
 
 <!--            提交表单信息开始-->
-            <form class="form-horizontal">
+            <form id="form-login" class="form-horizontal">
 
                 <div class="form-group">
-                    <label for="email">邮箱</label>
-                    <input type="email" class="form-control" id="email" placeholder="请输入邮箱">
+                    <label for="mobile">电话</label>
+                    <input type="text" class="form-control" id="mobile" name="mobile" placeholder="请输入电话">
                 </div>
                 <div class="form-group">
                     <label for="password">密码</label>
-                    <input type="password" class="form-control" id="password" placeholder="请输入密码">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="请输入密码">
                 </div>
                 <div class="form-group">
                     <div class="keep-pwd checkbox">
@@ -39,7 +39,7 @@
                     </div>
 
                 </div>
-                <button type="submit" class="btn btn-success btn-block">立即登录</button>
+                <input type="submit" class="btn btn-success btn-block" value="立即登录">
             </form>
 
 <!--            提交表单结束-->
@@ -48,7 +48,7 @@
     </div>
 
 </div>
-
+<script>WVKE.formsubmit('login')</script>
 
 
 <!--foot start-->

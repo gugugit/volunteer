@@ -30,7 +30,7 @@ abstract class Controller_Base extends Yaf_Controller_Abstract{
      * 必须登录 : 2
      * 管理员 : 4
      */
-    protected $_auth = 0;
+    protected $_auth = 1;
 
     /**
      * 构造函数
@@ -51,8 +51,8 @@ abstract class Controller_Base extends Yaf_Controller_Abstract{
             (2 & $this->_auth) && $this->_v_login();
         }
         # Layout
-//        $this->layout && $this->getView()->setLayout($this->layout);
-        $this->getView()->setLayout($this->layout) && $this->layout;
+        $this->layout && $this->getView()->setLayout($this->layout);
+//        $this->getView()->setLayout($this->layout) && $this->layout;
     }
 
     /**
@@ -62,7 +62,7 @@ abstract class Controller_Base extends Yaf_Controller_Abstract{
     {
         if (!$this->user) {
             @setcookie('USER', null, time() - 3600, '/');
-            IS_AJAX? Msg::ajax('登录超时，请重新登录'): Msg::js('', '/user/login');
+            IS_AJAX? Msg::ajax('登录超时，请重新登录'): Msg::js('', '/volunteer/login');
         }
     }
 

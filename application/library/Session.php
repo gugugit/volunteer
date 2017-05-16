@@ -1,9 +1,11 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: Ricky
  * Date: 2017/5/15
  * Time: 10:36
+ * @property  volunteer
  */
 class Session{
 

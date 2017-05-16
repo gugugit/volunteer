@@ -65,12 +65,25 @@
             </div>
             <button type="submit" class="btn btn-default">立刻搜索</button>
         </form>
-        <ul class="nav navbar-nav navbar-right">
+       <?php if(empty($this->user['mobile'])){
+           echo '<ul class="nav navbar-nav navbar-right">
             <li><a href="/volunteer/login">登录</a></li>
             <li style="color:#fff;padding-top:14px;">|</li>
             <li><a href="/volunteer/register">注册</a></li>
-        </ul>
+        </ul>';
+       }else{?>
+           <ul class="nav navbar-nav navbar-right">
+               <li class="dropdown">
+                   <a href="##" data-toggle="dropdown" class="dropdown-toggle"><? echo $this->user['username']; ?></a>
+                   <ul class="dropdown-menu dropdown-menu-left">
+                       <li><a href="/volunteer/index">个人主页</a></li>
+                       <li><a href="##">我的志愿</a></li>
+                       <li><a href="/volunteer/logout">退出登录</a></li>
+                   </ul>
+               </li>
+           </ul>
 
+       <?php }?>
     </div><!--基本导航条-->
 
 </div>
