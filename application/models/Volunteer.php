@@ -22,6 +22,7 @@ class VolunteerModel extends Db_Mysql {
             'mobile' => $_POST['mobile'],
             'true_name' => $_POST['username']
         );
+
         if(!$this->insert($register_data)) {
             return false;
         }

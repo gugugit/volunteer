@@ -29,7 +29,16 @@
                     <span class="vip-price"><?=$value['desc']?></span>
                 </li>
                 <li class="cf last">
-                    <a class="greenbtn2" href="#" style="text-decoration: none;" data-zhiye-id="">立即报名</a>
+
+<!--                    报名按钮-->
+                    <form id="form-activitydetail">
+                       <input type="hidden" name="activityid" value="<?=$value['id']?>">
+                        <input type="hidden" name="volunteerid" value="<?=$this->user['id']?>">
+
+                        <input type="submit" class="greenbtn2" value="立即报名">
+                    </form>
+<!--                    报名按钮-->
+
                     <p class="time">
                         <span>目前<?=$value['already_num']?>人报名</span>
                         <span>志愿时长：<?=$value['service_hour']?> 小时</span>
@@ -76,6 +85,7 @@
         </div>
     </div>
 </div>
+<script>WVKE.formsubmit('activitydetail')</script>
     <!--foot start-->
     <?php include PATH_TPL.'/foot.phtml'?>
     <!--foot end-->

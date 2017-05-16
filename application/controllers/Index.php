@@ -14,7 +14,6 @@ class IndexController extends Controller_Base {
     public function indexAction() {//默认Action
         $mActivity = new ActivityModel();
         $datas = $this->_list($mActivity,"L=16");
-//        $datas = $mActivity->fList();
         $this->assign("datas",$datas);
     }
 
@@ -23,10 +22,23 @@ class IndexController extends Controller_Base {
     */
     public function activitydetailAction($id = 0){
 
-        $mActivity = new ActivityModel();
-        if(!($id = (int)$id) || !$value = $mActivity->fRow($id)){
-            echo "您访问的页面不存在";//这里有问题bug。
-        }
-        $this->assign("value",$value);
+       if("POST" == $_SERVER['REQUEST_METHOD']){
+
+           $model_activolunteer = new ActivolunteerModel();
+
+           if($model_activolunteer->activity_register()){
+               Msg::ajax("报名成功！",1,"/index");
+           }else{
+               Msg::ajax("报名失败！",1,"/index");
+           }
+
+       }else{
+           $mActivity = new ActivityModel();
+           if(!($id = (int)$id) || !$value = $mActivity->fRow($id)){
+               echo "您访问的页面不存在";//这里有问题bug。
+           }
+           $this->assign("value",$value);
+       }
+
     }
 }
