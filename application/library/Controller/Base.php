@@ -28,7 +28,7 @@ abstract class Controller_Base extends Yaf_Controller_Abstract{
     /**
      * 开启 SESSION : 1
      * 必须登录 : 2
-     * 管理员 : 4
+     * 管理员 : 5
      */
     protected $_auth = 1;
 
@@ -37,9 +37,8 @@ abstract class Controller_Base extends Yaf_Controller_Abstract{
      */
     protected function init()
     {
-//        # 全局配置
-//        $this->config = Yaf_Application::app()->getConfig();
-//        define('PATH_TPL', $this->config->application->directory . 'views');
+        #全局配置
+        $this->config = Yaf_Application::app()->getConfig();
 
         # Request & Ajax
         $this->requests = $this->getRequest();
@@ -52,7 +51,6 @@ abstract class Controller_Base extends Yaf_Controller_Abstract{
         }
         # Layout
         $this->layout && $this->getView()->setLayout($this->layout);
-//        $this->getView()->setLayout($this->layout) && $this->layout;
     }
 
     /**

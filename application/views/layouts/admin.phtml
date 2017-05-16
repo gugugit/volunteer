@@ -34,34 +34,36 @@ function menu_link($txt, $link, $act = ''){
 </head>
 
 <body class="page-header-fixed page-sidebar-fixed page-footer-fixed">
+
+<!--头部-->
 <div class="header navbar navbar-inverse navbar-fixed-top">
 	<div class="header-inner">
-		<a class="navbar-brand" href="#"><?=$config->site->name?></a>
+		<a class="navbar-brand" href="#">一起志愿吧</a>
 		<a href="#" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 			<img src="/assets/img/menu-toggler.png" alt=""/>
 		</a>
 		<ul class="nav navbar-nav pull-right">
 			<li class="dropdown user">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
-					<img src="/assets/img/face_default.jpg" width="20" height="20"/>
-					<span class="username"><?=UserModel::name($user);?></span>
+					<img src="/assets/img/face_default.png" width="20" height="20"/>
+					<span class="username"><? echo $this->user['username']; ?></span>
 					<i class="icon-angle-down"></i>
 				</a>
 				<ul class="dropdown-menu">
-					<li><a href="/user/admin/userview/uid/<?=$user['uid']?>"><i class="icon-user"></i> 个人资料</a></li>
-<!--					<li><a href=""><i class="icon-key"></i> 修改登录密码</a></li>-->
-<!--					<li><a href=""><i class="icon-google-plus"></i> 双重认证</a></li>-->
-<!--					<li><a href=""><i class="icon-android"></i> 手机绑定</a></li>-->
-<!--					<li><a href=""><i class="icon-envelope-alt"></i> 邮件通知</a></li>-->
+					<li><a href="/user/admin/userview/uid/<?=$user['id']?>"><i class="icon-user"></i> 个人资料</a></li>
 					<li class="divider"></li>
 					<li><a id="trigger_fullscreen"><i class="icon-move"></i> 全屏</a></li>
-					<li><a href="/user/public/logout/"><i class="icon-signout"></i> 退出</a></li>
+					<li><a href="/volunteer/logout"><i class="icon-signout"></i> 退出</a></li>
 				</ul>
 			</li>
 		</ul>
 	</div>
 </div>
+<!--头部-->
+
 <div class="clearfix"></div>
+
+<!--页面内容开始-->
 <div class="page-container">
 	<div class="page-sidebar navbar-collapse collapse">
 		<ul class="page-sidebar-menu">
@@ -94,44 +96,47 @@ function menu_link($txt, $link, $act = ''){
 			</li>
 			<li<? if (stripos($_SERVER['REQUEST_URI'], 'user/admin')) echo ' class="active"' ?>>
 				<a>
-					<i class="icon-group"></i><span class="title">后台管理者管理</span><span class="arrow"></span>
+					<i class="icon-group"></i><span class="title">后台用户管理</span><span class="arrow"></span>
 				</a>
 				<ul class="sub-menu">
-					<? menu_link('后台管理用户列表', '/user/admin/user/') ?>
-					<? menu_link('后台管理用户添加', '/user/admin/useradd/') ?>
+					<? menu_link('用户列表', '/user/admin/user/') ?>
+					<? menu_link('用户添加', '/user/admin/useradd/') ?>
 				</ul>
 			</li>
 			<li<? if (stripos($_SERVER['REQUEST_URI'], 'jobinfo')) echo ' class="active"' ?>>
 				<a>
 					<i class="icon-comment"></i>
-					<span class="title">招聘信息管理</span>
+					<span class="title">志愿者管理</span>
 					<span class="arrow"></span>
 				</a>
 				<ul class="sub-menu">
-					<? menu_link('招聘信息列表', '/admin/jobinfo/jobinfolist/') ?>
-				</ul>
-			</li>
-			<li<? if (stripos($_SERVER['REQUEST_URI'], 'service')) echo ' class="active"' ?>>
-				<a>
-					<i class="icon-user-md"></i>
-					<span class="title">校友管理</span>
-					<span class="arrow"></span>
-				</a>
-				<ul class="sub-menu">
-					<? menu_link('校友列表', '/admin/service/fellow/') ?>
-<!--					--><?// menu_link('短信记录', '/admin/service/smslog/') ?>
+					<? menu_link('志愿者列表', '/admin/jobinfo/jobinfolist/') ?>
+                    <? menu_link('志愿者添加', '/admin/jobinfo/jobinfolist/') ?>
 				</ul>
 			</li>
 			<li<? if (stripos($_SERVER['REQUEST_URI'], 'student')) echo ' class="active"' ?>>
 				<a>
 					<i class="icon-user"></i>
-					<span class="title">学生管理</span>
+					<span class="title">志愿活动管理</span>
 					<span class="arrow"></span>
 				</a>
 				<ul class="sub-menu">
-					<? menu_link('学生列表', '/admin/student/student/') ?>
+					<? menu_link('活动列表', '/admin/student/student/') ?>
+                    <? menu_link('活动添加', '/admin/student/student/') ?>
 				</ul>
 			</li>
+
+            <li<? if (stripos($_SERVER['REQUEST_URI'], 'student')) echo ' class="active"' ?>>
+                <a>
+                    <i class="icon-user"></i>
+                    <span class="title">总队人员管理</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <? menu_link('总队人员列表', '/admin/student/student/') ?>
+                    <? menu_link('总队人员添加', '/admin/student/student/') ?>
+                </ul>
+            </li>
 
 
 		</ul>
@@ -242,7 +247,7 @@ function menu_link($txt, $link, $act = ''){
 					</li>
 					<li>
 						<i class="icon-home"></i>
-						<a href="/" target="_blank">主页</a>
+						<a href="/admin/index/index" target="_blank">主页</a>
 						<i class="icon-angle-right"></i>
 					</li>
 					<li>
@@ -260,6 +265,9 @@ function menu_link($txt, $link, $act = ''){
 		</div>
 	</div>
 </div>
+
+<!--页面内容结束-->
+
 <div class="footer">
 	<div class="footer-inner">2017 &copy; volunteer.com</div>
 	<div class="footer-tools"><span class="go-top"><i class="icon-angle-up"></i></span></div>

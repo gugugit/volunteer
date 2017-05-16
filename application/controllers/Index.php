@@ -29,7 +29,7 @@ class IndexController extends Controller_Base {
            if($model_activolunteer->activity_register()){
                Msg::ajax("报名成功！",1,"/index");
            }else{
-               Msg::ajax("报名失败！",1,"/index");
+               Msg::ajax("热爱志愿的你，要先登录噢～",1,"/volunteer/login");
            }
 
        }else{
