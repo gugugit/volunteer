@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>活动详情</title>
+    <meta name="keywords" content="hello" />
+    <meta name="description" content="hello" />
+    <link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/detail.css" />
+
+    <script src="/static/js/wvke.js" type="text/javascript"></script>
+    <script src="/static/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+
+
+</head>
+<body>
+<!--head start -->
+<?php include PATH_TPL.'/head.phtml'?>
+<!--head end -->
+<div id="wrapper" style="padding:5%;">
+    <div id="pager">
+        <div class="zyd-top w-1000 cf">
+            <div class="media f_l">
+                <img src="<?=$value['base_img']?>" alt="基地详情" />
+            </div>
+            <ul class="explain f_r">
+                <li> <h1> <?=$value['base_name']?></h1></li>
+                <li class="author"><?=$value['base_name']?></li>
+                <li class="intor"><?=$value['base_name']?></li>
+                <li class="price">
+                    <span class="curr-price"><?=$value['base_name']?></span>
+
+                </li>
+            </ul>
+        </div>
+        <!--top -->
+        <div class="zyd-main w-1000 cf">
+            <!--tab -->
+            <div class="zyd-tab mar-t20 mar-r20 f_l">
+                <div id="fixed" style="position: relative; top: 0px;" class="">
+                    <ul class="tabnav cf">
+                        <li class="active">基地介绍</li>
+                    </ul>
+                </div>
+                <!--tabcon -->
+                <div class="tabcon" style="padding-top: 0px;">
+                    <div class="ke-detail active">
+                        <br/>
+
+                        <p><?=$value['base_desc']?>
+                            <div class="media f_l">
+                                <img src="/img/demo1.jpg" alt="志愿的详情" />
+                            </div>
+                        </p>
+
+                    </div>
+
+                </div>
+                <!--tabcon -->
+            </div>
+            <!--tab -->
+
+            <!---aside -->
+            <div class="zyd-aside mar-t20 f_r">
+                <h3 class="caption">基地详述</h3>
+                <ul class="list">
+                    <li><p class="intor"> <?=$value['base_desc']?></p> </li>
+                </ul>
+            </div>
+            <!--aside -->
+
+        </div>
+    </div>
+</div>
+<script>WVKE.formsubmit('activitydetail')</script>
+    <!--foot start-->
+    <?php include PATH_TPL.'/foot.phtml'?>
+    <!--foot end-->
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery.bootstrap-dropdown-hover.min.js"></script>
+<script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/index-dropdown.js"></script>
+
+</body>
+</html>
