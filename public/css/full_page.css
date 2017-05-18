@@ -1,0 +1,26 @@
+body
+{
+  color: #FFFFFF;
+}
+.section1
+{
+  background-color: #BFDA00;
+}
+.section2
+{
+  background-color: #2EBE21;
+}
+.section3
+{
+  background-color: #2C3E50;
+}
+.section4
+{
+  background-color: #FF9900;
+}
+.text-center{
+  text-align:center
+}
+
+/*.section1Img { background: url(../img/volunteer_intro.jpg) no-repeat;}*/
+/*.section2Img { background: url(../img/demo3.jpg) 50%;}*/
