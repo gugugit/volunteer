@@ -1,1 +1,1 @@
-{"id":{"type":"int(11) unsigned","default":null,"comment":""},"intro":{"type":"text","default":null,"comment":"简介内容"}}
+{"id":{"type":"int(11) unsigned","default":null,"comment":""},"full_name":{"type":"varchar(50)","default":null,"comment":"全称"},"slogan":{"type":"varchar(50)","default":null,"comment":"口号"},"compose":{"type":"varchar(50)","default":null,"comment":"组成"},"aim":{"type":"varchar(50)","default":null,"comment":"宗旨"},"constr_policy":{"type":"varchar(255)","default":null,"comment":"建设方针"},"content":{"type":"text","default":null,"comment":"简介内容"}}

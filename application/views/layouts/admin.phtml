@@ -94,15 +94,17 @@ function menu_link($txt, $link, $act = ''){
 					<i class="icon-home"></i><span class="title">控制面板</span><span class="selected"></span>
 				</a>
 			</li>
+
 			<li<? if (stripos($_SERVER['REQUEST_URI'], 'user/admin')) echo ' class="active"' ?>>
 				<a>
-					<i class="icon-group"></i><span class="title">后台用户管理</span><span class="arrow"></span>
+					<i class="icon-group"></i><span class="title">总队简介管理</span><span class="arrow"></span>
 				</a>
 				<ul class="sub-menu">
-					<? menu_link('用户列表', '/user/admin/user/') ?>
-					<? menu_link('用户添加', '/user/admin/useradd/') ?>
+					<? menu_link('总队简介', '/admin/introduce/list') ?>
+<!--					--><?// menu_link('用户添加', '/user/admin/useradd/') ?>
 				</ul>
 			</li>
+
 			<li<? if (stripos($_SERVER['REQUEST_URI'], 'jobinfo')) echo ' class="active"' ?>>
 				<a>
 					<i class="icon-comment"></i>
