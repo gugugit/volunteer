@@ -1,54 +1,115 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>一起志愿吧</title>
-    <meta name="keywords" content="一起志愿吧"><!--关键词-->
-    <meta name="description" content="北京化工大学志愿服务总队"><!--描述-->
-
-    <!--    head foot样式必须css文件-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>总队简介</title>
+    <meta name="keywords" content="hello" />
+    <meta name="description" content="hello" />
     <link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/index.css">
-    <!--        head foot样式必须css文件-->
-    <!--    列表浮动显示-->
-    <script src="/js/sHover.min.js"></script>
-    <link rel="stylesheet" href="/css/shover.css">
-    <!--        列表浮动显示-->
-    <!-- 引入css -->
-    <link rel="stylesheet" type="text/css" href="/css/jquery.fullPage.css" />
-    <link rel="stylesheet" type="text/css" href="/css/full_page.css" />
-    <!-- fullpage.js依赖于jquery库 -->
-    <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="/js/jquery.fullPage.min.js"></script>
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/detail.css" />
 
-    <script type="text/javascript">
-        $(function() {
-            $("#ido").fullpage();
-        });
-    </script>
+    <script src="/static/js/wvke.js" type="text/javascript"></script>
+    <script src="/static/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+
 
 </head>
 <body>
 <!--head start -->
 <?php include PATH_TPL.'/head.phtml'?>
 <!--head end -->
+<div id="wrapper" style="padding:5%;">
+    <div id="pager">
 
-<div id="ido">
-    <div class="section section1 section1Img  text-center active">
-        <h3>每一个section是一屏，这是第二屏</h3>
-<!--        <img alt="" src="/img/volunteer_intro.jpg" />-->
+        <? foreach ($values as $value)?>
+        <!--top -->
+        <div class="zyd-main w-1000 cf">
+            <!--tab -->
+            <div class="zyd-tab mar-t20 mar-r20 f_l">
+                <div id="fixed" style="position: relative; top: 0px;" class="">
+                    <ul class="tabnav cf">
+                        <li class="active">总队介绍</li>
+                    </ul>
+                </div>
 
-    </div>
-    <div class="section section2 section2Img text-center " >
-        <h3>每一个section是一屏，这是第二屏</h3>
-    </div>
-    <div class="section section3 text-center">
-        <h3>每一个section是一屏，这是第三屏</h3>
-    </div>
-    <div class="section section4 text-center">
-        <h3>每一个section是一屏，这是第四屏</h3>
+                <!--tabcon -->
+                <div class="tabcon" style="padding-top: 0px;">
+                    <div class="ke-detail active">
+                        <br/>
+
+                        <p><?=$value['intro']?>
+                            <img src="/img/demo1.jpg" alt="志愿" />
+                        </p>
+
+                    </div>
+
+                </div>
+                <!--tabcon -->
+            </div>
+            <!--tab -->
+
+            <!---aside -->
+            <div class="zyd-aside mar-t20 f_r">
+
+
+                <h3 class="caption">全称</h3>
+                <ul class="list">
+                    <li>
+                        <div class="teacher cf">
+                            <span class="desc"><?=$value['full_name']?></span>
+                        </div>
+                    </li>
+                </ul>
+
+                <h3 class="caption">口号</h3>
+                <ul class="list">
+                    <li>
+                        <div class="teacher cf">
+                            <span class="desc"><?=$value['slogan']?></span>
+                        </div>
+                    </li>
+                </ul>
+                <h3 class="caption">组成</h3>
+                <ul class="list">
+                    <li>
+                        <div class="teacher cf">
+                            <span class="desc"><?=$value['compose']?></span>
+                        </div>
+                    </li>
+                </ul>
+                <h3 class="caption">宗旨</h3>
+                <ul class="list">
+                    <li>
+                        <div class="teacher cf">
+                            <span class="desc"><?=$value['aim']?></span>
+                        </div>
+                    </li>
+                </ul>
+                <h3 class="caption">建设方针</h3>
+                <ul class="list">
+                    <li>
+                        <div class="teacher cf">
+                            <span class="desc"><?=$value['constr_policy']?></span>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+            <!--aside -->
+
+        </div>
+
     </div>
 </div>
+
+<!--foot start-->
+<?php include PATH_TPL.'/foot.phtml'?>
+<!--foot end-->
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/jquery.bootstrap-dropdown-hover.min.js"></script>
+<script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/index-dropdown.js"></script>
 
 </body>
 </html>

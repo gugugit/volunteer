@@ -1,0 +1,1 @@
+{"id":{"type":"int(11) unsigned","default":null,"comment":""},"intro":{"type":"text","default":null,"comment":"简介内容"}}
