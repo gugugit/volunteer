@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Ricky
- * Date: 16/10/17
- * Time: 17:37
- */
 
 class IndexController extends Controller_Base {
 
