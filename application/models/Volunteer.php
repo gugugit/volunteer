@@ -77,7 +77,7 @@ class VolunteerModel extends Db_Mysql {
         self::academy_zhiji => '职业技术学院',
         self::academy_jijiao => '继续教育学院'
     );
-    
+
     /**
      * 用户提交注册数据
     */
