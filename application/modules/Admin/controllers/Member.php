@@ -81,7 +81,6 @@ class MemberController extends Controller_Admin{
             $this->seo("会员编辑");
         }
 
-
     }
 
     /**

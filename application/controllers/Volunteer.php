@@ -1,11 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Ricky
- * Date: 16/11/4
- * Time: 10:41
- */
 class VolunteerController extends Controller_Base {
+
     /**
      * 个人主页
     */
@@ -21,15 +16,15 @@ class VolunteerController extends Controller_Base {
     public function loginAction(){
         if("POST" == $_SERVER['REQUEST_METHOD']){
             if(empty($_POST['mobile'])||empty($_POST['password'])){
-                Msg::ajax(" 电话或密码为空，请输入");
+                Msg::ajax(" 手机号或密码为空，请输入");
             }
             if(!\Helper\Validate::is_mobile($_POST['mobile'])){
-                Msg::ajax("电话格式错误，请重新输入");
+                Msg::ajax("手机号格式错误，请重新输入");
             }
 
             $model_volunteer = new VolunteerModel();
             if(!$volunteer = $model_volunteer->where("mobile='{$_POST['mobile']}'")->fRow()){
-                Msg::ajax("该电话没有注册，请先注册");
+                Msg::ajax("该手机号没有注册，请先注册");
             }
 
             if($volunteer['password'] == $_POST['password']){

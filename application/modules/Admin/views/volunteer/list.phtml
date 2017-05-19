@@ -1,0 +1,51 @@
+<a href="/admin/volunteer/add/" class="btn green" href="#"><i class="icon-plus"></i>添加</a>
+<div role="grid" class="dataTables_wrapper form-inline">
+    <table class="table table-striped table-bordered table-hover dataTable">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>姓名</th>
+            <th>电话</th>
+            <th>邮箱</th>
+            <th>邮箱认证</th>
+            <th>创建时间</th>
+            <th>更新时间</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody id="table">
+        <?
+        foreach ($datas as $k1 => $v1) {?>
+            <tr>
+                <td><?=$v1["id"]?></td>
+                <td><a href="/admin/volunteer/detail/id/<?=$v1['id']?>"><?=$v1['username']?><i class="btn btn-sm icon-link"></i></a></td>
+                <td><?=$v1["mobile"]?></td>
+                <td><?=$v1["email"]?></td>
+                <td>
+                    <? foreach (VolunteerModel::$email_valid as $k2 => $v2) {
+                        if ($v1['email_valid'] == $k2) echo $v2;
+                    }
+                    ?>
+                </td>
+                <td><?=$v1["created_at"]?></td>
+                <td><?=$v1["updated_at"]?></td>
+                <td>
+                    <a class="btn btn-xs blue" href="/admin/volunteer/edit/id/<?=$v1['id']?>"><i class="icon-edit"></i> 编辑</a>
+                    <a class="btn btn-xs red" onclick="volunteerdel(<?=$v1['id']?>)"><i class="icon-remove"></i> 删除</a>
+                </td>
+            </tr>
+        <? } ?>
+        </tbody>
+    </table>
+    <?= $page->show() ?>
+</div>
+<script>
+    function volunteerdel(id){
+        if(confirm('即将删除该行,操作不可恢复，是否继续？')) {
+            $.post('/admin/volunteer/del', {id: id}, function (d) {
+                alert(d.msg);
+                if (d.status) location.reload();
+            }, 'json');
+        }
+    }
+</script>

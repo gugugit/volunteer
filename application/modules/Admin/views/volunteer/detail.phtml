@@ -1,0 +1,83 @@
+<link href="/assets/css/pages/profile.css" rel="stylesheet" type="text/css"/>
+<style>
+    #tab_1_3 img, #tab_1_4 img{ width:80px; height:80px; background:#000000; color:#FFF; text-align:center; line-height:80px }
+    #tab_1_4 img{ width:120px; }
+    .label-1{background:#fcb322}
+    .label-2{background:#FF3300}
+</style>
+<div class="tabbable tabbable-custom tabbable-full-width">
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#tab_1_1">基本信息</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="tab_1_1" class="tab-pane active">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12 profile-info">
+                            <table class="table table-striped table-bordered table-advance table-hover">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>姓名</th>
+                                    <th>学号</th>
+                                    <th>班级</th>
+
+                                    <th>学院</th>
+                                    <th>性别</th>
+                                    <th>民族</th>
+                                    <th>政治面貌</th>
+
+                                    <th>籍贯</th>
+                                    <th>用户角色</th>
+                                    <th>出生日期</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><?=$datas['id']?></td>
+                                    <td><?=$datas['username']?></td>
+                                    <td><?=$datas['student_id']?></td>
+                                    <td><?=$datas['class']?></td>
+
+                                    <td><?=$datas['academy_id']?></td>
+                                    <td>
+                                        <? foreach (VolunteerModel::$sex as $k2 => $v2) { ?>
+                                            <? if ($datas['sex'] == $k2) echo $v2;?>
+                                        <?}?>
+                                    </td>
+                                    <td><?=$datas['nation']?></td>
+                                    <td><?=$datas['political_status']?></td>
+
+                                    <td><?=$datas['origin']?></td>
+
+                                    <td>
+
+                                        <select onchange="volunteersave({id:<?=$datas['id']?>, role:this.value})">
+                                            <? foreach (VolunteerModel::$role as $k2 => $v2) { ?>
+                                                <option<? if ($datas['role'] == $k2) echo ' selected' ?> value="<?=$k2?>"><?=$v2?></option>
+                                            <? } ?>
+                                        </select>
+
+                                    </td>
+                                    <td><?=$datas['birthday']?></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function volunteersave(data) {
+        $.post('/admin/volunteer/save', data, function (d) {
+            alert(d.msg);
+        }, 'json');
+    }
+
+</script>
