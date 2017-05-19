@@ -95,7 +95,7 @@ function menu_link($txt, $link, $act = ''){
 				</a>
 			</li>
 
-			<li<? if (stripos($_SERVER['REQUEST_URI'], 'user/admin')) echo ' class="active"' ?>>
+			<li<? if (stripos($_SERVER['REQUEST_URI'], '/admin/introduce/list')) echo ' class="active"' ?>>
 				<a>
 					<i class="icon-group"></i><span class="title">总队简介管理</span><span class="arrow"></span>
 				</a>
@@ -105,15 +105,14 @@ function menu_link($txt, $link, $act = ''){
 				</ul>
 			</li>
 
-			<li<? if (stripos($_SERVER['REQUEST_URI'], 'jobinfo')) echo ' class="active"' ?>>
+			<li<? if (stripos($_SERVER['REQUEST_URI'], '/admin/base/list')) echo ' class="active"' ?>>
 				<a>
 					<i class="icon-comment"></i>
-					<span class="title">志愿者管理</span>
+					<span class="title">基地管理</span>
 					<span class="arrow"></span>
 				</a>
 				<ul class="sub-menu">
-					<? menu_link('志愿者列表', '/admin/jobinfo/jobinfolist/') ?>
-                    <? menu_link('志愿者添加', '/admin/jobinfo/jobinfolist/') ?>
+					<? menu_link('基地列表', '/admin/base/list') ?>
 				</ul>
 			</li>
 			<li<? if (stripos($_SERVER['REQUEST_URI'], 'student')) echo ' class="active"' ?>>

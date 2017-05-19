@@ -24,6 +24,21 @@ class Str
     }
 
     /**
+     * 把字符串补全到指定长度 左侧补0
+     * @param String $str
+     * @param int $length 长度
+     * @return String
+     */
+    static function fillStr($str, $length)
+    {
+        $orilen = strlen($str);
+        for($i=0;$i<$length-$orilen;$i++){
+            $str = '0'.$str;
+        }
+        return $str;
+    }
+
+    /**
      * 迭代过滤
      */
     static function filter(&$data)

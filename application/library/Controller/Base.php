@@ -165,47 +165,39 @@ abstract class Controller_Base extends Yaf_Controller_Abstract{
 
     /**
      * 显示、保存、添加
-     *
      * @param Db_Mysql $table 表名或表对象
      * @param array $datas 数据
      * @param array $fields 过滤字段
-     *
      * @return false:数据库错误, 0:无操作, 1+:保存并返回ID
      */
-    protected function _save($table, $datas = array(), $fields = array(), $default = 3, $useAjax = true)
+    protected function _save($table, $datas, $fields = array())
     {
         $this->_table($table);
-        $this->fields = $fields? $fields: $table->getFields();
         $_GET[$table->pk] = isset($_REQUEST[$table->pk])? intval($_REQUEST[$table->pk]): 0;
         # 处理POST提交
-        if ('POST' == $_SERVER['REQUEST_METHOD']) {
-            if ($default) {
-                if (!$_GET[$table->pk] && (1 & $default)) {
-                    $datas['created_at'] = $_SERVER['REQUEST_TIME'];
-                    $datas['create_ip'] = USER_IP;
-                }
-                if (2 & $default) {
-                    $datas['updated_at'] = $_SERVER['REQUEST_TIME'];
-                    $datas['update_ip'] = USER_IP;
-                }
-            }
-            $datas || $datas = \Helper\Field::validates($this->fields);
+        if ('POST' == $_SERVER['REQUEST_METHOD']){
+            # 过滤掉非法字段
+            if ($fields) foreach ($datas as $k1 => $v1) if (!isset($fields[$k1])) unset($datas[$k1]);
             # 修改记录
             if ($_GET[$table->pk]) {
                 $datas[$table->pk] = $_GET[$table->pk];
                 $table->update($datas);
                 $id = &$_GET[$table->pk];
-            } # 新增记录
+            }
+            # 新增记录
             else {
                 if (isset($datas[$table->pk])) unset($datas[$table->pk]);
                 $id = $table->insert($datas);
             }
-            $useAjax && IS_AJAX && Msg::ajax('操作成功', 1);
             return empty($id)? false: $id;
         }
-        $this->data = $_GET[$table->pk]? $table->fRow($_GET[$table->pk]): array();
+        if ($_GET[$table->pk]) {
+            $this->data = $table->fRow($_GET[$table->pk]);
+        }
+        $this->fields = $fields? $fields: $table->getFields();
         return 0;
     }
+
 
     /**
      * 数据列表

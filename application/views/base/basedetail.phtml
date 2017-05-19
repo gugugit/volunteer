@@ -23,7 +23,7 @@
     <div id="pager">
         <div class="zyd-top w-1000 cf">
             <div class="media f_l">
-                <img src="<?=$value['base_img']?>" alt="基地详情" />
+                <img src="<?=$value['img']?>" alt="基地详情" />
             </div>
             <ul class="explain f_r">
                 <li> <h1> <?=$value['base_name']?></h1></li>
@@ -49,7 +49,7 @@
                     <div class="ke-detail active">
                         <br/>
 
-                        <p><?=$value['base_desc']?>
+                        <p><?=$value['content']?>
                             <div class="media f_l">
                                 <img src="/img/demo1.jpg" alt="志愿的详情" />
                             </div>
@@ -66,7 +66,7 @@
             <div class="zyd-aside mar-t20 f_r">
                 <h3 class="caption">基地详述</h3>
                 <ul class="list">
-                    <li><p class="intor"> <?=$value['base_desc']?></p> </li>
+                    <li><p class="intor"> <?=$value['content']?></p> </li>
                 </ul>
             </div>
             <!--aside -->
@@ -74,7 +74,6 @@
         </div>
     </div>
 </div>
-<script>WVKE.formsubmit('activitydetail')</script>
     <!--foot start-->
     <?php include PATH_TPL.'/foot.phtml'?>
     <!--foot end-->

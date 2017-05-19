@@ -78,4 +78,30 @@ class File{
         }
         return $isupload;
     }
+
+    /**
+     * 删除文件夹及其文件夹下所有文件
+     * @param string $dir 文件路径
+     * @return bool
+     */
+    static function deldir($dir)
+    {
+        # 文件夹不存在 直接返回
+        if(!file_exists($dir)) return;
+        # 先删除目录下的文件
+        $dh = opendir($dir);
+        while ($file = readdir($dh)) {
+            if ($file != "." && $file != "..") {
+                $fullpath = $dir . "/" . $file;
+                if (!is_dir($fullpath)) {
+                    unlink($fullpath);
+                } else {
+                    self::deldir($fullpath);
+                }
+            }
+        }
+        closedir($dh);
+        # 删除当前文件夹：
+        return rmdir($dir);
+    }
 }

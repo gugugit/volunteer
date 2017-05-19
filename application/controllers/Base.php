@@ -30,4 +30,6 @@ class BaseController extends Controller_Base{
         }
         $this->assign("value",$value);
     }
+
+
 }
