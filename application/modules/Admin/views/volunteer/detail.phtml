@@ -41,7 +41,12 @@
                                     <td><?=$datas['student_id']?></td>
                                     <td><?=$datas['class']?></td>
 
-                                    <td><?=$datas['academy_id']?></td>
+                                    <td>
+                                        <? foreach (VolunteerModel::$academy as $k2 => $v2) { ?>
+                                            <? if ($datas['academy_id'] == $k2) echo $v2;?>
+                                        <?}?>
+                                    </td>
+
                                     <td>
                                         <? foreach (VolunteerModel::$sex as $k2 => $v2) { ?>
                                             <? if ($datas['sex'] == $k2) echo $v2;?>

@@ -106,7 +106,7 @@ class VolunteerController extends Controller_Admin{
 
         if ('POST' == $_SERVER['REQUEST_METHOD']) {
             foreach ($_POST as $k1 => $v1) {
-                if (false === strpos('id,role', $k1)) unset($_POST[$k1]);
+                if (false === strpos('id,role,academy_id', $k1)) unset($_POST[$k1]);
             }
         }
         if ($this->_save('volunteer', $_POST)) {
