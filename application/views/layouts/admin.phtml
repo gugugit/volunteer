@@ -113,17 +113,18 @@ function menu_link($txt, $link, $act = ''){
 				</a>
 				<ul class="sub-menu">
 					<? menu_link('基地列表', '/admin/base/list') ?>
+                    <? menu_link('基地添加', '/admin/base/add') ?>
 				</ul>
 			</li>
-			<li<? if (stripos($_SERVER['REQUEST_URI'], 'student')) echo ' class="active"' ?>>
+			<li<? if (stripos($_SERVER['REQUEST_URI'], 'member')) echo ' class="active"' ?>>
 				<a>
 					<i class="icon-user"></i>
-					<span class="title">志愿活动管理</span>
+					<span class="title">会员管理</span>
 					<span class="arrow"></span>
 				</a>
 				<ul class="sub-menu">
-					<? menu_link('活动列表', '/admin/student/student/') ?>
-                    <? menu_link('活动添加', '/admin/student/student/') ?>
+					<? menu_link('会员列表', '/admin/member/list') ?>
+                    <? menu_link('会员添加', '/admin/member/add') ?>
 				</ul>
 			</li>
 

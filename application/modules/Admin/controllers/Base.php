@@ -10,6 +10,8 @@ class BaseController extends Controller_Admin{
 
         $model_base = new BaseModel();
 
+        $this->search('id', array('id' => '基地ID', 'base_name' => '基地名称'));
+
         $datas = $this->_list($model_base);
 
         $this->assign('datas',$datas);
@@ -78,6 +80,17 @@ class BaseController extends Controller_Admin{
             $this->assign('datas',$datas);
             $this->seo("基地编辑");
         }
+    }
+
+    /**
+     * 基地删除
+    */
+    public function delAction(){
+        $model_base = new BaseModel();
+        if(!$model_base->where("id = {$_POST['id']}")->del()){
+            Msg::ajax('删除失败');
+        }
+        Msg::ajax('删除成功',1);
     }
 
     /**

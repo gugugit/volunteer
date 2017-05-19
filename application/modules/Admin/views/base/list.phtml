@@ -7,6 +7,7 @@
             <th>基地名称</th>
             <th>基地简介</th>
             <th>创建时间</th>
+            <th>更新时间</th>
             <th>操作</th>
         </tr>
         </thead>
@@ -18,6 +19,7 @@
                 <td><?=$v1["base_name"]?></td>
                 <td><?=mb_substr(strip_tags($v1['content']),0,15,'UTF-8')?></td>
                 <td><?=$v1["created_at"]?></td>
+                <td><?=$v1["updated_at"]?></td>
                 <td>
                     <a class="btn btn-xs blue" href="/admin/base/edit/id/<?=$v1['id']?>"><i class="icon-edit"></i> 编辑</a>
                     <a class="btn btn-xs red" onclick="basedel(<?=$v1['id']?>)"><i class="icon-remove"></i> 删除</a>
@@ -31,7 +33,7 @@
 <script>
     function basedel(id){
         if(confirm('即将删除该行,操作不可恢复，是否继续？')) {
-            $.post('/admin/base/listdel/', {id: id}, function (d) {
+            $.post('/admin/base/del', {id: id}, function (d) {
                 alert(d.msg);
                 if (d.status) location.reload();
             }, 'json');
