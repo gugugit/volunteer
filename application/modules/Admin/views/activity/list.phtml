@@ -1,0 +1,84 @@
+<a href="/admin/activity/add/" class="btn green" href="#"><i class="icon-plus"></i>添加</a>
+<div role="grid" class="dataTables_wrapper form-inline">
+    <table class="table table-striped table-bordered table-hover dataTable">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>活动名称</th>
+            <th>志愿时长</th>
+            <th>限制人数</th>
+            <th>活动类型</th>
+            <th>已报人数</th>
+            <th>开始时间</th>
+            <th>结束时间</th>
+            <th width="180px">操作</th>
+        </tr>
+        </thead>
+        <tbody id="table">
+        <?
+        foreach ($datas as $k1 => $v1) {?>
+            <tr>
+                <td><?=$v1["id"]?></td>
+                <td><?=mb_substr($v1["caption"],0,15)?></td>
+                <td>
+                    <input onblur="activitysave({id:<?=$v1['id']?>, service_hour:this.value})" type="text" value="<?=$v1['service_hour']?>" style="width: 50%;" />
+                </td>
+                <td> <input onblur="activitysave({id:<?=$v1['id']?>, limit_num:this.value})" type="text" value="<?=$v1['limit_num']?>" style="width: 50%;"/>
+
+                </td>
+                <td>
+                    <select onchange="activitysave({id:<?=$v1['id']?>, type:this.value})">
+                        <? foreach (ActivityModel::$type as $k2 => $v2) { ?>
+                            <option<? if ($v1['type'] == $k2) echo ' selected' ?> value="<?=$k2?>"><?=$v2?></option>
+                        <? } ?>
+                    </select>
+                </td>
+                <td><?=$v1["already_num"]?></td>
+                <td><?=$v1["start_time"]?></td>
+                <td><?=$v1["end_time"]?></td>
+                <td>
+                    <a class="btn btn-xs blue" href="/admin/activity/edit/id/<?=$v1['id']?>"><i class="icon-edit"></i> 编辑</a>
+                    <a class="btn btn-xs red" onclick="activitydel(<?=$v1['id']?>)"><i class="icon-remove"></i> 删除</a>
+
+                    <?if($v1['status'] == 0){?>
+                    <a class="btn btn-xs green" onclick="activityup(<?=$v1['id']?>)"><i class="icon-cloud-upload"></i> 发布</a>
+                    <?}else{?>
+                        <a class="btn btn-xs yellow" onclick="activitydown(<?=$v1['id']?>)"><i class="icon-cloud-download"></i> 下线</a>
+                    <?}?>
+                </td>
+            </tr>
+        <? } ?>
+        </tbody>
+    </table>
+    <?= $page->show() ?>
+</div>
+<script>
+    function activitydel(id){
+        if(confirm('即将删除该行,操作不可恢复，是否继续？')) {
+            $.post('/admin/activity/del', {id: id}, function (d) {
+                alert(d.msg);
+                if (d.status) location.reload();
+            }, 'json');
+        }
+    }
+
+    function activitysave(data) {
+        $.post('/admin/activity/save', data, function (d) {
+            alert(d.msg);
+        }, 'json');
+    }
+
+    function activityup(id) {
+        $.post('/admin/activity/up', {id: id}, function (d) {
+            alert(d.msg);
+            if (d.status) location.reload();
+        }, 'json');
+    }
+
+    function activitydown(id) {
+        $.post('/admin/activity/down', {id: id}, function (d) {
+            alert(d.msg);
+            if (d.status) location.reload();
+        }, 'json');
+    }
+</script>

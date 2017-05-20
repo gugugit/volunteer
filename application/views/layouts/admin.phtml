@@ -152,6 +152,18 @@ function menu_link($txt, $link, $act = ''){
                 </ul>
             </li>
 
+            <li<? if (stripos($_SERVER['REQUEST_URI'], 'activity')) echo ' class="active"' ?>>
+                <a>
+                    <i class="icon-user"></i>
+                    <span class="title">志愿活动管理</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <? menu_link('活动列表', '/admin/activity/list') ?>
+                    <? menu_link('活动添加', '/admin/activity/add') ?>
+                </ul>
+            </li>
+
 
 		</ul>
 	</div>

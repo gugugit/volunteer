@@ -31,6 +31,7 @@ class MemberController extends Controller_Admin{
      * 会员编辑
      */
     public function editAction($id = 0){
+
         $this->seo("会员编辑");
         $model_base = new MemberModel();
 
@@ -101,6 +102,7 @@ class MemberController extends Controller_Admin{
      * 会员删除
      */
     public function delAction(){
+
         $model_base = new MemberModel();
         if(!$model_base->where("id = {$_POST['id']}")->del()){
             Msg::ajax('删除失败');
