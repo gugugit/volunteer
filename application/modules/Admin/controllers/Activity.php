@@ -35,6 +35,12 @@ class ActivityController extends Controller_Admin{
                 if(empty($_POST['caption'])){
                     Msg::js('活动标题不能为空');
                 }
+                if(empty($_POST['start_time'])){
+                    Msg::js('请选择活动开始时间');
+                }
+                if(empty($_POST['end_time'])){
+                    Msg::js('请选择活动结束时间');
+                }
 
                 if(!isset($_FILES['img'])){
                     Msg::js('请选择上传图片');
@@ -50,6 +56,7 @@ class ActivityController extends Controller_Admin{
             $_POST['img'] = '/uploag/1.jpg';
 
             if($id){
+//                print_r($_POST);exit;
                 $_POST['id'] = $id;
                 unset($_POST['img']);
                 $model_activity->update($_POST);

@@ -1,6 +1,10 @@
+
 <script type="text/javascript" src="/assets/model_editor/activity_editor/ueditor/ueditor.config.js"></script>
 <script type="text/javascript" src="/assets/model_editor/activity_editor/ueditor/ueditor.all.js"></script>
 <script type="text/javascript" src="/assets/model_editor/activity_editor/ueditor/lang/zh-cn/zh-cn.js"></script>
+
+<link href="/assets/date/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+
 
 <style>
     .top-news a {padding: 0px;TEXT-DECORATION:none}
@@ -12,27 +16,39 @@
                 <div class="post-comment">
 
                     <div class="form-group">
+
                         <label class="control-label">活动名称</label>
                         <input type="text" name="caption" value="" class="form-control" style="width: 50%"/>
                     </div>
-
-<!--                    <div class="form-group">-->
-<!--                        <label class="control-label">开始时间</label>-->
-<!--                        <input type="text" name="starttime" value="" class="form-control" style="width: 50%"/>-->
-<!--                    </div>-->
-<!---->
-<!--                    <div class="form-group">-->
-<!--                        <label class="control-label">结束时间</label>-->
-<!--                        <input type="text" name="endtime" value="" class="form-control" style="width: 50%"/>-->
-<!--                    </div>-->
-
 
                     <div class="form-group">
                         <label class="control-label" for="form_subway">上传活动封面：</label>
                         <input type="file" name="img[]"/>
                     </div>
-
                     <br/>
+
+<!--                    开始时间-->
+                    <div class="control-group">
+                        <label class="control-label">开始时间：</label>
+                        <div class="controls input-append date form_time_start" data-date="" data-date-format="yyyy-mm-dd hh:ii:ss" data-link-field="dtp_input_start" data-link-format="yyyy-mm-dd hh:ii:ss">
+                            <input size="30" type="text" value="" readonly>
+                            <span class="add-on"><i class="icon-remove"></i></span>
+                            <span class="add-on"><i class="icon-th"></i></span>
+                        </div>
+                        <input type="hidden" name="start_time" id="dtp_input_start" value="" /><br/>
+                    </div>
+<!--                        结束时间-->
+                    <div class="control-group">
+                        <label class="control-label">结束时间：</label>
+                        <div class="controls input-append date form_time_end" data-date="" data-date-format="yyyy-mm-dd hh:ii:ss" data-link-field="dtp_input_end" data-link-format="yyyy-mm-dd hh:ii:ss">
+                            <input size="30" type="text" value="" readonly>
+                            <span class="add-on"><i class="icon-remove"></i></span>
+                            <span class="add-on"><i class="icon-th"></i></span>
+                        </div>
+                        <input type="hidden" name="end_time" id="dtp_input_end" value="" /><br/>
+                    </div>
+
+
                     <label class="control-label">活动详情:</label>
                     <!--content 开始-->
                     <script type="text/plain" id="container"></script>
@@ -48,3 +64,40 @@
         </div>
     </form>
 </div>
+
+<script type="text/javascript" src="/assets/date/jquery/jquery-1.8.3.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="/assets/date/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/date/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="/assets/date/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+<script type="text/javascript">
+
+    $('.form_time_start').datetimepicker({
+        language:  'zh-CN',
+        format: "yyyy-mm-dd hh:ii:ss",
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 1,
+        minView: 0,
+        maxView: 1,
+        forceParse: 0,
+        pickerPosition: "bottom-left"
+    });
+
+    $('.form_time_end').datetimepicker({
+        language:  'zh-CN',
+        format: "yyyy-mm-dd hh:ii:ss",
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 1,
+        minView: 0,
+        maxView: 1,
+        forceParse: 0,
+        pickerPosition: "bottom-left"
+    });
+
+</script>
