@@ -13,7 +13,7 @@ class MemberController extends Controller_Admin{
 
         $model_member = new MemberModel();
 
-        $this->search('id', array('id' => 'ID', 'name' => '姓名', 'group_id' => '组ID'));
+        $this->search('id', array('id' => 'ID', 'name' => '姓名', 'group_id' => '组ID:1234567'));
         $datas = $this->_list($model_member);
 
         $this->assign("datas",$datas);

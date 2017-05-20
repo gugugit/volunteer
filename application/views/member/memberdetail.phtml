@@ -57,7 +57,13 @@
                     <li>
                         <div class="teacher cf">
                              <h2 class="tit"><?=$value['name']?></h2>
-                             <span class="desc"><?=$value['group_id']?></span>
+
+                             <span class="desc">
+                                  <? foreach (MemberModel::$group_id as $k2 => $v2) { ?>
+                                      <? if ($value['group_id'] == $k2) echo $v2;?>
+                                  <?}?>
+                             </span>
+
                         </div>
                         <p class="intor"> <?=$value['content']?></p> </li>
                 </ul>
