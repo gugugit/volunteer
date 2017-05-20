@@ -56,10 +56,10 @@ class DiscussController extends Controller_Base{
     */
     public function tagsAction(){
 
-        if ('POST' == $_SERVER['REQUEST_METHOD']) {
-            Msg::ajax("谢谢");
-
-        }
+//        if ('POST' == $_SERVER['REQUEST_METHOD']) {
+//            Msg::ajax("谢谢");
+//
+//        }
 
 //        if ($this->_save('share', $_POST)) {
 //            Msg::ajax('修改成功');

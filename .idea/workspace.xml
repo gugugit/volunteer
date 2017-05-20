@@ -20,28 +20,7 @@
     <favorites_list name="helloyaf" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Discuss.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/modules/Admin/controllers/Discuss.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list.phtml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/modules/Admin/views/discuss/list.phtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -141,13 +120,13 @@
         <option value="$PROJECT_DIR$/application/models/Volunteer.php" />
         <option value="$PROJECT_DIR$/application/views/volunteer/login.phtml" />
         <option value="$PROJECT_DIR$/application/controllers/Volunteer.php" />
-        <option value="$PROJECT_DIR$/application/views/discuss/list.phtml" />
         <option value="$PROJECT_DIR$/public/assets/model_editor/share_editor/ueditor/ueditor.config.js" />
-        <option value="$PROJECT_DIR$/application/views/discuss/detail.phtml" />
-        <option value="$PROJECT_DIR$/application/controllers/Discuss.php" />
         <option value="$PROJECT_DIR$/application/views/layouts/admin.phtml" />
         <option value="$PROJECT_DIR$/application/modules/Admin/views/discuss/list.phtml" />
         <option value="$PROJECT_DIR$/application/modules/Admin/controllers/Discuss.php" />
+        <option value="$PROJECT_DIR$/application/views/discuss/detail.phtml" />
+        <option value="$PROJECT_DIR$/application/controllers/Discuss.php" />
+        <option value="$PROJECT_DIR$/application/views/discuss/list.phtml" />
       </list>
     </option>
   </component>
@@ -245,32 +224,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helloyaf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helloyaf" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -286,14 +239,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -467,18 +412,17 @@
       <workItem from="1495157636953" duration="3150000" />
       <workItem from="1495163286165" duration="35459000" />
       <workItem from="1495247605884" duration="8242000" />
-      <workItem from="1495258186567" duration="8431000" />
+      <workItem from="1495258186567" duration="9279000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="244677000" />
+    <option name="totallyTimeSpent" value="245525000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-20" y="23" width="1280" height="729" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21647818" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21647818" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -802,36 +746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/discuss/list.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="54" column="58" lean-forward="true" selection-start-line="54" selection-start-column="58" selection-end-line="54" selection-end-column="58" />
-          <folding>
-            <marker date="1495261445000" expanded="true" signature="2417:2672" ph="..." />
-            <marker date="1495261445000" expanded="true" signature="2479:2672" ph="..." />
-            <marker date="1495261445000" expanded="true" signature="2540:2672" ph="..." />
-            <marker date="1495261445000" expanded="true" signature="2625:2672" ph="..." />
-            <marker date="1495261445000" expanded="true" signature="2908:3221" ph="..." />
-            <marker date="1495261445000" expanded="true" signature="3494:4926" ph="..." />
-            <marker date="1495261445000" expanded="true" signature="3541:4133" ph="..." />
-            <marker date="1495261445000" expanded="true" signature="3592:3649" ph="..." />
-            <marker date="1495261445000" expanded="true" signature="3691:4114" ph="..." />
-            <marker date="1495261445000" expanded="true" signature="3739:4091" ph="..." />
-            <marker date="1495261445000" expanded="true" signature="3768:4065" ph="..." />
-            <marker date="1495261445000" expanded="true" signature="3781:4059" ph="..." />
-            <marker date="1495261445000" expanded="true" signature="3894:4054" ph="..." />
-            <marker date="1495261445000" expanded="true" signature="4167:4909" ph="..." />
-            <marker date="1495261445000" expanded="true" signature="4208:4890" ph="..." />
-            <marker date="1495261445000" expanded="true" signature="4263:4330" ph="..." />
-            <marker date="1495261445000" expanded="true" signature="4376:4867" ph="..." />
-            <marker date="1495261445000" expanded="true" signature="4425:4840" ph="..." />
-            <marker date="1495261445000" expanded="true" signature="4458:4810" ph="..." />
-            <marker date="1495261445000" expanded="true" signature="4515:4630" ph="..." />
-            <marker date="1495261445000" expanded="true" signature="4688:4804" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/model_editor/share_editor/ueditor/ueditor.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="239">
@@ -874,32 +788,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/discuss/detail.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="48" column="74" lean-forward="false" selection-start-line="48" selection-start-column="74" selection-end-line="48" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="436">
           <caret line="33" column="41" lean-forward="true" selection-start-line="30" selection-start-column="11" selection-end-line="33" selection-end-column="41" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Discuss.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding>
-            <marker date="1495264692000" expanded="true" signature="739:879" ph="select s.id,... share" />
-            <marker date="1495264692000" expanded="true" signature="1106:1113" ph="select v.use... share" />
-            <marker date="1495264692000" expanded="true" signature="1106:1229" ph="select s.id,... volunteer" />
-            <marker date="1495264692000" expanded="true" signature="1235:1236" ph="select s.id,... share" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -964,6 +857,35 @@
         <state relative-caret-position="165">
           <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/discuss/list.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="66" column="42" lean-forward="true" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/discuss/detail.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="54" column="0" lean-forward="true" selection-start-line="47" selection-start-column="39" selection-end-line="54" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Discuss.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="42" column="0" lean-forward="true" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <marker date="1495267379000" expanded="true" signature="739:879" ph="select s.id,... share" />
+            <marker date="1495267379000" expanded="true" signature="1106:1113" ph="select v.use... share" />
+            <marker date="1495267379000" expanded="true" signature="1106:1229" ph="select s.id,... volunteer" />
+            <marker date="1495267379000" expanded="true" signature="1235:1236" ph="select s.id,... share" />
+          </folding>
         </state>
       </provider>
     </entry>
