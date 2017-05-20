@@ -7,8 +7,8 @@
             <th>活动名称</th>
             <th>志愿时长</th>
             <th>限制人数</th>
-            <th>活动类型</th>
             <th>已报人数</th>
+            <th>活动类型</th>
             <th>开始时间</th>
             <th>结束时间</th>
             <th width="180px">操作</th>
@@ -26,6 +26,7 @@
                 <td> <input onblur="activitysave({id:<?=$v1['id']?>, limit_num:this.value})" type="text" value="<?=$v1['limit_num']?>" style="width: 50%;"/>
 
                 </td>
+                <td><?=$v1["already_num"]?></td>
                 <td>
                     <select onchange="activitysave({id:<?=$v1['id']?>, type:this.value})">
                         <? foreach (ActivityModel::$type as $k2 => $v2) { ?>
@@ -33,7 +34,6 @@
                         <? } ?>
                     </select>
                 </td>
-                <td><?=$v1["already_num"]?></td>
                 <td><?=$v1["start_time"]?></td>
                 <td><?=$v1["end_time"]?></td>
                 <td>

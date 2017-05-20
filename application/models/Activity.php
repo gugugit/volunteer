@@ -8,7 +8,7 @@ class ActivityModel extends Db_Mysql{
 
     #活动类型
     const ACTIVITY_TYPE_BASE_YES = 1;
-    const ACTIVITY_TYPE_BASE_NO = 0;
+    const ACTIVITY_TYPE_BASE_NO = 2;
 
     static $type= array(
         self::ACTIVITY_TYPE_BASE_YES => '基地活动',

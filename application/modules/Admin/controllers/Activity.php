@@ -9,7 +9,7 @@ class ActivityController extends Controller_Admin{
     public function listAction(){
         $this->seo("活动列表");
         $model_activity = new ActivityModel();
-        $this->search('id', array('id' => 'ID', 'name' => '活动名称', 'service_hour' => '志愿时长'));
+        $this->search('id', array('id' => 'ID', 'name' => '活动名称', 'service_hour' => '志愿时长','type' => '1基地2非基地'));
         $datas = $this->_list($model_activity);
         $this->assign("datas",$datas);
     }

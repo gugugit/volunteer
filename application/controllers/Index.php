@@ -7,7 +7,7 @@ class IndexController extends Controller_Base {
     */
     public function indexAction() {//默认Action
         $mActivity = new ActivityModel();
-        $datas = $this->_list($mActivity,"L=16");
+        $datas = $this->_list($mActivity,"status=1&L=16");
         $this->assign("datas",$datas);
     }
 

@@ -12,7 +12,7 @@ class DiscussController extends Controller_Admin{
 
         $model_discuss= new DiscussModel();
 
-        $this->search('id', array('id' => 'ID', 'caption' => '标题', 'created_at' => '发布时间'));
+        $this->search('id', array('id' => 'ID', 'caption' => '标题'));
 
         $datas = $this->_list($model_discuss);
 
