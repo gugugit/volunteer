@@ -46,10 +46,15 @@
             <div class="module-body discuss-publish">
 
                 <div class="topic-selected-box clearfix">
+                    <!--                    报名按钮-->
+                    <form id="form-share">
+
+                        <input type="hidden" name="volunteerid" value="<?=$this->user['id']?>">
 
                     <div class="input-group">
                         <span class="input-group-addon" id="sizing-addon2">标题</span>
-                        <input type="text" class="form-control" placeholder="一句话说明你想分享的经验" aria-describedby="sizing-addon2" style="width: 90%;">
+
+                        <input type="text" name="caption" class="form-control" placeholder="一句话说明你想分享的经验" aria-describedby="sizing-addon2" style="width: 90%;">
                     </div>
                     <br>
                     <!--content 开始-->
@@ -62,13 +67,20 @@
                 </div>
 
                 <div class="txtarea-foot clearfix"><div class="warning-tips" style="display:none;"></div>
-                    <a href="javascript:void(0);" id="jsPublish" class="btn float-right btn-primary btn-modify-sure nc-req-auth click-pub-point">发布</a>
-                    <a href="javascript:void(0);" id="jsCancel" class="btn btn-default float-right btn-modify-cancel">取消</a>
+
+                    <input type="submit" class="btn float-right btn-primary btn-modify-sure nc-req-auth click-pub-point" value="发布">
+                    <a href="/discuss/list" id="jsCancel" class="btn btn-default float-right btn-modify-cancel">取消</a>
                 </div>
+
+                </form>
+                <!--                    报名按钮-->
+
             </div>
         </div>
     <!--主体内容结束-->
 </div>
+
+    <script>WVKE.formsubmit('share')</script>
 
 <!--foot-->
 <?php include PATH_TPL.'/foot.phtml'?>

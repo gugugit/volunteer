@@ -31,55 +31,43 @@
 <div class="nk-container">
     <div class="nk-main clearfix">
 
-
         <!--主体内容-->
+
         <div class="nk-content">
-            <div class="module-box">
-                <div class="module-head clearfix">
-                    <div class="module-head-oprt">
-                        <a class="btn btn-primary btn-b-publish nc-req-auth" href="/discuss/share"> <i class="ico-submit"></i> 我要发布 </a>
-                    </div>
-                    <h2>分享与交流</h2>
-                </div>
-                <div class="tags-box tag-mod">
-                    <a href="#" class="tag-label selected">全部</a>
-                </div>
-                <div class="menu-txt-box">
-                    <ul class="menu-txt clearfix">
-                        <li class="selected"> <a href="/discuss/share">最新发布</a> </li>
-                    </ul>
-                </div>
-                <div class="module-body">
-                    <ul class="common-list">
-
-                        <? foreach ($datas as $k => $v){?>
-
-                        <li class="clearfix"> <a class="head-pic" data-card-uid="826546" href="#" data-card-index="1"></a>
-                            <div class="discuss-detail">
-                                <div class="discuss-main clearfix">
-                                    <a href="/discuss/detail/id/<?=$v['id']?>" target="_blank"> <?=$v['caption']?></a>
-                                </div>
-                                <div class="feed-foot">
-                                    <div class="feed-origin">
-                                        <p class="feed-tip"> <a class="d-name level-color-9" data-card-uid="826546" href="#" data-card-index="2">
-                                        <?=$v['username']?>
-                                            </a>&nbsp;&nbsp;<?=$v['created_at']?> &nbsp;&nbsp;发表 <a href="#"></a></p>
-                                    </div>
-                                    <div class="feed-legend">
-                                        <span>赞<span class="feed-legend-num">4</span></span>
-                                        <span class="feed-legend-pipe">|</span>
-                                        <span>浏览<span class="feed-legend-num">6829</span></span>
-                                    </div>
+            <div class="module-box discuss-topic js-copy-mark" data-mark-info="作者：牛妹">
+                <div class="discuss-topic-head">
+                    <h1 class="discuss-title">【史上最有意义的活动】发面经，赢奖品！ </h1>
+                    <div class="discuss-author clearfix">
+                        <a href="" class="answer-head" data-card-uid="826546" data-card-index="1"> </a>
+                        <div class="post-detail">
+                            <a> </a>
+                            <a class="post-name level-color-9" href="https://www.nowcoder.com/profile/826546" data-card-uid="826546" data-card-index="2">牛妹</a>
+                            <div class="post-legend">
+                                <span class="post-time"> 编辑于 2017-05-02 20:31:43 </span>
+                                <div class="feed-legend">
+                                    <span style="cursor:pointer;" class="nc-req-auth js-post-replay">回复<span class="feed-legend-num">21</span></span>
+                                    <span class="feed-legend-pipe">|</span>
+                                    <span style="cursor:pointer;" class="js-post-like nc-req-auth">赞 4</span>
+                                    <span class="feed-legend-pipe">|</span>
+                                    <span>浏览<span class="feed-legend-num">12717</span></span>
                                 </div>
                             </div>
-                        </li>
-
-                        <? } ?>
-                    </ul>
+                        </div>
+                    </div>
+                    <h1 class="discuss-title js-fixed-title fixed-title" style="top: 54px; display: none;">【史上最有意义的活动】发面经，赢奖品！
+                        <div class="discuss-tool-bar">
+                            <a href="javascript:void(0);" class="icon-thumbs-up js-fix-like nc-req-auth"></a>
+                            <a href="javascript:void(0);" class="icon-star js-fix-follow nc-req-auth"></a>
+                            <a href="javascript:void(0);" class="icon-comment nc-req-auth js-post-replay"></a>
+                        </div></h1>
+                </div>
+                <div class="post-topic-main">
+                    <div class="post-topic-des">
+                    </div>
                 </div>
             </div>
         </div>
-        <!--主体内容结束-->
+
 
 
         <div class="nk-bar">
