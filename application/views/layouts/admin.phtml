@@ -27,6 +27,7 @@ function menu_link($txt, $link, $act = ''){
 	<link href="/assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color"/>
 	<link href="/assets/css/custom.css" rel="stylesheet" type="text/css"/>
 	<!-- END THEME STYLES -->
+
 	<link rel="shortcut icon" href="/favicon.ico"/>
 	<script src="/assets/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
 	<script src="/static/js/wvke.js" type="text/javascript"></script>
@@ -137,6 +138,17 @@ function menu_link($txt, $link, $act = ''){
                 <ul class="sub-menu">
                     <? menu_link('志愿者列表', '/admin/volunteer/list') ?>
                     <? menu_link('志愿者添加', '/admin/volunteer/add') ?>
+                </ul>
+            </li>
+
+            <li<? if (stripos($_SERVER['REQUEST_URI'], 'discuss')) echo ' class="active"' ?>>
+                <a>
+                    <i class="icon-user"></i>
+                    <span class="title">志愿者分享文章管理</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <? menu_link('文章列表', '/admin/discuss/list') ?>
                 </ul>
             </li>
 
@@ -289,4 +301,5 @@ function menu_link($txt, $link, $act = ''){
 <!-- END CORE PLUGINS -->
 <script src="/assets/scripts/app.js"></script>
 <script>jQuery(document).ready(function(){App.init()});</script>
+
 </body></html>

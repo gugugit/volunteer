@@ -39,9 +39,36 @@ class DiscussController extends Controller_Base{
     /**
      * 详情页
     */
-    public function detailAction(){
+    public function detailAction($id = 0){
+
+        $model_discuss = new DiscussModel();
+        if($id){
+            $datas = $model_discuss->query("select s.id,s.tags,v.username,s.content,s.caption,s.created_at from volunteer v,share s where s.volunteer_id=v.id and s.id={$id}");
+            $this->assign('datas',$datas);
+        }else{
+            Msg::ajax('sorry～你访问的页面被外星人带走啦',1,'/discuss/list');
+        }
 
     }
+
+    /**
+     * 点赞
+    */
+    public function tagsAction(){
+
+        if ('POST' == $_SERVER['REQUEST_METHOD']) {
+            Msg::ajax("谢谢");
+
+        }
+
+//        if ($this->_save('share', $_POST)) {
+//            Msg::ajax('修改成功');
+//        }
+
+    }
+
+
+
 
     /**
      * 图片上传处理
@@ -58,7 +85,7 @@ class DiscussController extends Controller_Base{
         if (!$size = getimagesize($_FILES['upfile']['tmp_name'])) Msg::ajax('参数错误');
         if (empty($type[$size[2]])) Msg::ajax('图片类型错误');
         # 保存路径
-        $datepath = "upload/intro/" . date("Y-m-d");
+        $datepath = "upload/share" . date("Y-m-d");
         file_exists($datepath) || mkdir($datepath, 0777);
         # 保存图片
         $fileName = $datepath . "/" . rand(1, 10000) . time() . $type[$size[2]];
