@@ -15,16 +15,16 @@ class VolunteerController extends Controller_Base {
      */
     public function loginAction(){
         if("POST" == $_SERVER['REQUEST_METHOD']){
-            if(empty($_POST['mobile'])||empty($_POST['password'])){
-                Msg::ajax(" 手机号或密码为空，请输入");
+            if(empty($_POST['studentid'])||empty($_POST['password'])){
+                Msg::ajax(" 学号或密码为空，请输入");
             }
-            if(!\Helper\Validate::is_mobile($_POST['mobile'])){
-                Msg::ajax("手机号格式错误，请重新输入");
+            if(!\Helper\Validate::is_number($_POST['studentid'])){
+                Msg::ajax("学号格式错误，请重新输入");
             }
 
             $model_volunteer = new VolunteerModel();
-            if(!$volunteer = $model_volunteer->where("mobile='{$_POST['mobile']}'")->fRow()){
-                Msg::ajax("该手机号没有注册，请先注册");
+            if(!$volunteer = $model_volunteer->where("student_id='{$_POST['studentid']}'")->fRow()){
+                Msg::ajax("该学号没有注册呢，请先注册一下");
             }
 
             if($volunteer['password'] == $_POST['password']){
@@ -54,6 +54,9 @@ class VolunteerController extends Controller_Base {
         if('POST' == $_SERVER['REQUEST_METHOD']){
             if(!\Helper\Validate::name($_POST['username']) || empty($_POST['username'])){
                 Msg::ajax("姓名为空或者输入姓名不合法");
+            }
+            if(empty($_POST['studentid'])){
+                Msg::ajax("学号为空，请输入");
             }
             if(!\Helper\Validate::is_mobile($_POST['mobile']) || empty($_POST['mobile'])){
                 Msg::ajax("输入手机号码为空或者不合法");

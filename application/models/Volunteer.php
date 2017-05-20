@@ -84,6 +84,7 @@ class VolunteerModel extends Db_Mysql {
     public function register_data(){
         $register_data = array(
             'username' => $_POST['username'],
+            'student_id' => $_POST['studentid'],
             'password' => $_POST['password'],
             'email' => $_POST['email'],
             'mobile' => $_POST['mobile']
