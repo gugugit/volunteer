@@ -45,8 +45,11 @@
 
                     <p class="time">
                         <span>目前<?=$value['already_num']?>人报名</span>
-                        <span>志愿时长：<?=$value['service_hour']?> 小时</span>
-                        <span>距离报名截止还有：2 天</span>
+                        <span>服务时长：<?=$value['service_hour']?> 小时</span>
+                        <span>距离报名截止还有：
+                            <?=date('Ymd',time())-date('Ymd',strtotime($value['end_time']))?>
+                            天
+                        </span>
                     </p>
                 </li>
             </ul>
