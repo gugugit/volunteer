@@ -6,6 +6,30 @@ class VolunteerController extends Controller_Base {
     */
     public function indexAction()
     {
+        $model_volunteer = new VolunteerModel();
+
+        $datas = $this->_list($model_volunteer,"id={$this->user['id']}");
+
+        $this->assign('datas',$datas);
+    }
+
+    /**
+     * 个人信息编辑
+     */
+    public function editAction()
+    {
+        $model_volunteer = new VolunteerModel();
+        if('POST' == $_SERVER['REQUEST_METHOD']){
+
+            if(!$model_volunteer->where("id = {$this->user['id']}")->update($_POST)){
+                Msg::ajax('保存失败,请联系开发人员');
+            }
+            Msg::ajax('保存成功',1,'/volunteer/index');
+        }
+
+        $datas = $this->_list($model_volunteer,"id={$this->user['id']}");
+
+        $this->assign('datas',$datas);
 
     }
 
@@ -29,7 +53,7 @@ class VolunteerController extends Controller_Base {
 
             if($volunteer['password'] == $_POST['password']){
                 $this->session->user = $volunteer;
-                Msg::ajax('',1,'/index');
+                Msg::ajax('首先完善一下个人信息哦～',1,'/volunteer/index');
             }
         }
 
