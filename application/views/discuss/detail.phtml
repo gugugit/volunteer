@@ -32,9 +32,10 @@
         <!--主体内容-->
 
         <div class="nk-content">
-            <div class="module-box discuss-topic js-copy-mark" data-mark-info="作者：牛妹">
+            <div class="module-box discuss-topic js-copy-mark" data-mark-info="hale">
                 <div class="discuss-topic-head">
                     <?foreach ($datas as $k =>$v){?>
+
                     <h4 class="discuss-title"><?=$v['caption']?> </h4>
                     <div class="discuss-author clearfix">
 <!--                        <a href="" class="answer-head" data-card-uid="826546" data-card-index="1"> </a>-->
@@ -45,12 +46,13 @@
                                 <span class="post-time"> 编辑于 <?=$v['created_at']?> </span>
                                 <div class="feed-legend">
 
-<!--                                    <form id="form-tags">-->
-<!--                                        <input type="hidden" name="shareid" value="--><?//=$v['id']?><!--">-->
-<!--                                        <input type="submit" class="js-post-like nc-req-auth" value="赞">-->
-<!--                                        --><?//=$v['tags']?>
-<!--                                    </form>-->
-<!---->
+                                    <form id="form-tags">
+                                        <input type="hidden" name="share_id" value="<?=$v['id']?>">
+                                        <input type="hidden" name="volunteer_id" value="<?=$this->user['id']?>">
+                                        <input type="submit" class="js-post-like nc-req-auth" value="赞">
+                                        <?=$v['tags']?>
+                                    </form>
+
 <!--                                    <span>浏览<span class="feed-legend-num">12717</span></span>-->
 
                                 </div>
@@ -116,7 +118,7 @@
 <?php include PATH_TPL.'/foot.phtml'?>
 
 
-<script>WVKE.formsubmit('tags','/discuss/tags/')</script>
+<script>WVKE.formsubmit('tags','/discuss/tags')</script>
 
 <script src="/js/jquery-3.2.1.min.js"></script>
 <script src="/js/jquery.bootstrap-dropdown-hover.min.js"></script>

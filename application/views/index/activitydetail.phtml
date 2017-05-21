@@ -55,18 +55,20 @@
                     </form>
 <!--                    报名按钮-->
 
-                    <?$condition = date('Ymd',time()) - date('Ymd',strtotime($value['end_time']));
-                    if($condition>1 || $condition == 1){?>
+                    <?
+                    $condition = date('Ymd',strtotime($value['end_time'])) - date('Ymd',time());
+                    $num = $value['limit_num'] - $value['already_num'];
+                    if(($condition>1 || $condition == 1)&& ($num != 0)){?>
                         <p class="time">
                             <span>目前<?=$value['already_num']?>人报名</span>
                             <span>服务时长：<?=$value['service_hour']?> 小时</span>
                             <span>距离报名截止还有：
-                                <?=date('Ymd',time())-date('Ymd',strtotime($value['end_time']))?>
+                                <?=$condition?>
                                 天
                         </span>
                         </p>
 
-                    <?}else if(0 == $condition){?>
+                    <?}else if(0 == $condition || $num == 0){?>
                         <p class="time">
                             <span>目前<?=$value['already_num']?>人报名</span>
                             <span>服务时长：<?=$value['service_hour']?> 小时</span>

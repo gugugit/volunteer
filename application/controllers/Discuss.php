@@ -42,8 +42,12 @@ class DiscussController extends Controller_Base{
     public function detailAction($id = 0){
 
         $model_discuss = new DiscussModel();
+        $model_tags = new TagsModel();
+
         if($id){
-            $datas = $model_discuss->query("select s.id,s.tags,v.username,s.content,s.caption,s.created_at from volunteer v,share s where s.volunteer_id=v.id and s.id={$id}");
+            $datas = $model_discuss->query("select s.id,v.username,s.content,s.caption,s.created_at from volunteer v,share s where s.volunteer_id=v.id and s.id={$id}");
+            $share_tags_num =  $model_tags->query("select count(*) tags from tags where share_id={$id}");
+            $datas[0]['tags'] = $share_tags_num[0]['tags'];
             $this->assign('datas',$datas);
         }else{
             Msg::ajax('sorry～你访问的页面被外星人带走啦',1,'/discuss/list');
@@ -55,15 +59,19 @@ class DiscussController extends Controller_Base{
      * 点赞
     */
     public function tagsAction(){
+        $model_tags = new TagsModel();
+        if ('POST' == $_SERVER['REQUEST_METHOD']) {
 
-//        if ('POST' == $_SERVER['REQUEST_METHOD']) {
-//            Msg::ajax("谢谢");
-//
-//        }
+            $data = $model_tags->field('share_id')->table('tags')->where("volunteer_id={$_POST['volunteer_id']}")->fList();
 
-//        if ($this->_save('share', $_POST)) {
-//            Msg::ajax('修改成功');
-//        }
+            foreach ($data as $value){
+                if($value['share_id'] == $_POST['share_id']){
+                    Msg::ajax("你已经点过赞了，快去看看其他同学的精彩分享吧！");
+                }
+            }
+          $model_tags->insert($_POST);
+          Msg::ajax("谢谢");
+        }
 
     }
 

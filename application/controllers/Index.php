@@ -19,8 +19,15 @@ class IndexController extends Controller_Base {
        if("POST" == $_SERVER['REQUEST_METHOD']){
 
            $model_activolunteer = new ActivolunteerModel();
+           $model_activity = new ActivityModel();
 
            if($model_activolunteer->activity_register()){
+               $already_num_array = $model_activity->query("select already_num from activity where id={$_POST['activityid']} ");
+
+               $already_num_array['0']['already_num'] = $already_num_array['0']['already_num'] + 1 ;
+
+               $model_activity->where("id={$_POST['activityid']}")->update(array('already_num' => $already_num_array['0']['already_num']));
+
                Msg::ajax("报名成功！");
            }else{
                Msg::ajax("热爱志愿的你，要先登录噢～",1,"/volunteer/login");
