@@ -53,7 +53,7 @@ class VolunteerController extends Controller_Base {
 
             if($volunteer['password'] == $_POST['password']){
                 $this->session->user = $volunteer;
-                Msg::ajax('登录成功！首先请完善一下个人信息哦～以便于我们与你取得联系。',1,'/volunteer/index');
+                Msg::ajax('',1,'/volunteer/index');
             }
         }
 
@@ -99,7 +99,7 @@ class VolunteerController extends Controller_Base {
             }
             $model_volunteer = new VolunteerModel();
             if($model_volunteer->register_data()){
-                Msg::ajax("注册成功！",1,"/volunteer/login");
+                Msg::ajax("注册成功！赶快去登录完善一下个人信息哦～以便于我们与你取得联系。",1,"/volunteer/login");
             }
 
         }

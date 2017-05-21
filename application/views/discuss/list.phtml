@@ -42,11 +42,11 @@
                     <h2>分享与交流</h2>
                 </div>
                 <div class="tags-box tag-mod">
-                    <a href="#" class="tag-label selected">全部</a>
+
                 </div>
                 <div class="menu-txt-box">
                     <ul class="menu-txt clearfix">
-                        <li class="selected"> <a href="/discuss/share">最新发布</a> </li>
+                        <li class="tag-label selected">最新发布</li>
                     </ul>
                 </div>
                 <div class="module-body">
@@ -57,7 +57,7 @@
                         <li class="clearfix"> <a class="head-pic" data-card-uid="826546" href="#" data-card-index="1"></a>
                             <div class="discuss-detail">
                                 <div class="discuss-main clearfix">
-                                    <a href="/discuss/detail/id/<?=$v['id']?>" target="_blank"> <?=$v['caption']?></a>
+                                    <a href="/discuss/detail/id/<?=$v['share_id']?>" target="_blank"> <?=$v['caption']?></a>
                                 </div>
                                 <div class="feed-foot">
                                     <div class="feed-origin">
@@ -67,7 +67,7 @@
                                     </div>
 
                                     <div class="feed-legend">
-                                        <span>赞<span class="feed-legend-num"></span></span>
+                                        <span>赞<span class="feed-legend-num"></span><?=$v['tags_num']?></span>
 <!--                                        <span class="feed-legend-pipe">|</span>-->
 <!--                                        <span>浏览<span class="feed-legend-num">6829</span></span>-->
                                     </div>

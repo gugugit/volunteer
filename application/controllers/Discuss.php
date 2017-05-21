@@ -30,9 +30,7 @@ class DiscussController extends Controller_Base{
     public function listAction(){
 
         $model_discuss = new DiscussModel();
-
-        $datas = $model_discuss->query('select s.id,v.username,s.content,s.caption,s.created_at from share s left join volunteer v on s.volunteer_id=v.id order by s.created_at desc');
-
+        $datas = $model_discuss->query('select vs.username,vs.share_id,vs.caption,vs.content,vs.created_at,tn.tags_num from (select v.username,s.id share_id,s.caption,s.content,s.created_at from share s,volunteer v where v.id = s.volunteer_id)vs left join (select t.share_id,count(*) tags_num from tags t left join share s on s.id = t.share_id group by t.share_id)tn on tn.share_id = vs.share_id order by vs.created_at desc');
         $this->assign('datas',$datas);
     }
 
@@ -45,9 +43,13 @@ class DiscussController extends Controller_Base{
         $model_tags = new TagsModel();
 
         if($id){
+
             $datas = $model_discuss->query("select s.id,v.username,s.content,s.caption,s.created_at from volunteer v,share s where s.volunteer_id=v.id and s.id={$id}");
+
             $share_tags_num =  $model_tags->query("select count(*) tags from tags where share_id={$id}");
+
             $datas[0]['tags'] = $share_tags_num[0]['tags'];
+
             $this->assign('datas',$datas);
         }else{
             Msg::ajax('sorry～你访问的页面被外星人带走啦',1,'/discuss/list');
