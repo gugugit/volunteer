@@ -234,18 +234,12 @@ img,input,label,select {
     transform: translateZ(0)
 }
 
-.greenbtn2:active,.greenbtn2:focus,.greenbtn2:hover {
-    background: #35b558;
-    color: #fff;
-    border-color: #35b558
-}
-
-.greenbtn3 {
+.greenbtn1 {
     display: inline-block;
-    color: #fff;
-    border-radius: 3px;
-    font-size: 18px;
-    background: #7bda95;
+    color: #cc1a28;
+    font-size: 16px;
+    background: #f3fff6;
+    border: 1px solid #cc1a28;
     -webkit-transition-duration: .8s;
     transition-duration: .8s;
     -webkit-transition-property: background;
@@ -254,9 +248,34 @@ img,input,label,select {
     transform: translateZ(0)
 }
 
-.greenbtn3:active,.greenbtn3:focus,.greenbtn3:hover {
+.greenbtn3 {
+    display: inline-block;
+    color: #d9da24;
+    font-size: 16px;
+    background: #f3fff6;
+    border: 1px solid #d9da24;
+    -webkit-transition-duration: .8s;
+    transition-duration: .8s;
+    -webkit-transition-property: background;
+    transition-property: background;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0)
+}
+
+.greenbtn2:active,.greenbtn2:focus,.greenbtn2:hover {
     background: #35b558;
-    color: #fff
+    color: #fff;
+    border-color: #35b558
+}
+.greenbtn1:active,.greenbtn1:focus,.greenbtn1:hover {
+    background: #cc1a28;
+    color: #fff;
+    border-color: #cc1a28
+}
+.greenbtn3:active,.greenbtn3:focus,.greenbtn3:hover {
+    background: #d9da24;
+    color: #fff;
+    border-color: #d9da24
 }
 
 .orange-color {

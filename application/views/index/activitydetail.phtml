@@ -39,18 +39,43 @@
                        <input type="hidden" name="activityid" value="<?=$value['id']?>">
                         <input type="hidden" name="volunteerid" value="<?=$this->user['id']?>">
 
+                        <?
+                        $condition = date('Ymd',time()) - date('Ymd',strtotime($value['end_time']));
+                        if($condition>1 || $condition == 1){?>
                         <input type="submit" class="greenbtn2" value="立即报名">
+                        <?}else if(0 == $condition){?>
+                            <input type="submit"  class="greenbtn1" value="暂停报名" disabled>
+                        <?}else{?>
+                            <input type="submit" class="greenbtn3" value="已经结束" disabled>
+                        <?}?>
+
                     </form>
 <!--                    报名按钮-->
 
-                    <p class="time">
-                        <span>目前<?=$value['already_num']?>人报名</span>
-                        <span>服务时长：<?=$value['service_hour']?> 小时</span>
-                        <span>距离报名截止还有：
-                            <?=date('Ymd',time())-date('Ymd',strtotime($value['end_time']))?>
-                            天
+                    <?$condition = date('Ymd',time()) - date('Ymd',strtotime($value['end_time']));
+                    if($condition>1 || $condition == 1){?>
+                        <p class="time">
+                            <span>目前<?=$value['already_num']?>人报名</span>
+                            <span>服务时长：<?=$value['service_hour']?> 小时</span>
+                            <span>距离报名截止还有：
+                                <?=date('Ymd',time())-date('Ymd',strtotime($value['end_time']))?>
+                                天
                         </span>
-                    </p>
+                        </p>
+
+                    <?}else if(0 == $condition){?>
+                        <p class="time">
+                            <span>目前<?=$value['already_num']?>人报名</span>
+                            <span>服务时长：<?=$value['service_hour']?> 小时</span>
+                        </p>
+
+                    <?}else{?>
+                        <p class="time">
+                            <span>该活动已经结束，快去选择其他志愿活动参加吧！</span>
+                        </p>
+
+                    <?}?>
+
                 </li>
             </ul>
         </div>

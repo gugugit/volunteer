@@ -117,6 +117,28 @@ body {
     border-radius: 3px;
     margin-right: 3px
 }
+.zyd-top .explain .greenbtn,.zyd-top .explain .greenbtn1 {
+    width: 125px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    outline: 0;
+    border-radius: 3px;
+    margin-right: 3px
+}
+.zyd-top .explain .greenbtn,.zyd-top .explain .greenbtn3 {
+    width: 125px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    outline: 0;
+    border-radius: 3px;
+    margin-right: 3px
+}
 
 .zyd-top .explain .greenbtn2 {
     border: 1px solid #35b558;
@@ -124,8 +146,27 @@ body {
     line-height: 38px
 }
 
+.zyd-top .explain .greenbtn1 {
+    border: 1px solid #cc1a28;
+    background: #fff;
+    line-height: 38px
+}
+
+.zyd-top .explain .greenbtn3 {
+    border: 1px solid #d9da24;
+    background: #fff;
+    line-height: 38px
+}
 .zyd-top .explain .greenbtn2:active,.zyd-top .explain .greenbtn2:focus,.zyd-top .explain .greenbtn2:hover {
     background: #35b558
+}
+
+.zyd-top .explain .greenbtn1:active,.zyd-top .explain .greenbtn1:focus,.zyd-top .explain .greenbtn1:hover {
+    background: #cc1a28
+}
+
+.zyd-top .explain .greenbtn3:active,.zyd-top .explain .greenbtn3:focus,.zyd-top .explain .greenbtn3:hover {
+    background: #d9da24
 }
 
 .zyd-top .explain .time {
@@ -301,9 +342,47 @@ body {
     border-radius: 3px;
     margin-left: 3px
 }
+.zyd-tab .tabnav.floatna .greenbtn,.zyd-tab .tabnav.floatna .greenbtn1 {
+    display: inline-block;
+    width: 105px;
+    height: 36px;
+    font-size: 15px;
+    padding-top: 0;
+    margin-top: 12px;
+    line-height: 36px;
+    text-align: center;
+    cursor: pointer;
+    outline: 0;
+    border-radius: 3px;
+    margin-left: 3px
+}
+.zyd-tab .tabnav.floatna .greenbtn,.zyd-tab .tabnav.floatna .greenbtn3 {
+    display: inline-block;
+    width: 105px;
+    height: 36px;
+    font-size: 15px;
+    padding-top: 0;
+    margin-top: 12px;
+    line-height: 36px;
+    text-align: center;
+    cursor: pointer;
+    outline: 0;
+    border-radius: 3px;
+    margin-left: 3px
+}
 
 .zyd-tab .tabnav.floatna .greenbtn2 {
     border: 1px solid #35b558;
+    background: #fff;
+    line-height: 34px
+}
+.zyd-tab .tabnav.floatna .greenbtn1 {
+    border: 1px solid #cc1a28;
+    background: #fff;
+    line-height: 34px
+}
+.zyd-tab .tabnav.floatna .greenbtn3 {
+    border: 1px solid #d9da24;
     background: #fff;
     line-height: 34px
 }
@@ -312,6 +391,12 @@ body {
     background: #35b558
 }
 
+.zyd-tab .tabnav.floatna .greenbtn1:active,.zyd-tab .tabnav.floatna .greenbtn1:focus,.zyd-tab .tabnav.floatna .greenbtn1:hover {
+    background: #cc1a28
+}
+.zyd-tab .tabnav.floatna .greenbtn3:active,.zyd-tab .tabnav.floatna .greenbtn3:focus,.zyd-tab .tabnav.floatna .greenbtn3:hover {
+    background: #d9da24
+}
 .zyd-tab .tabcon>div {
     display: none
 }
