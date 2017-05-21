@@ -23,7 +23,7 @@
     <div id="pager">
         <div class="zyd-top w-1000 cf">
             <div class="media f_l">
-                <img src="<?=$value['img']?>" alt="志愿的详情" />
+                <img src="<?=$value['img']?>"/>
             </div>
             <ul class="explain f_r">
                 <li class="author"></li>
@@ -40,10 +40,13 @@
                         <input type="hidden" name="volunteerid" value="<?=$this->user['id']?>">
 
                         <?
-                        $condition = date('Ymd',time()) - date('Ymd',strtotime($value['end_time']));
-                        if($condition>1 || $condition == 1){?>
-                        <input type="submit" class="greenbtn2" value="立即报名">
-                        <?}else if(0 == $condition){?>
+                        $condition = date('Ymd',strtotime($value['end_time'])) - date('Ymd',time());
+
+                        $num = $value['limit_num'] - $value['already_num'];
+
+                        if(($condition>1 || $condition == 1) && ($num != 0)){?>
+                                <input type="submit" class="greenbtn2" value="立即报名">
+                        <?}else if(0 == $condition || $num == 0){?>
                             <input type="submit"  class="greenbtn1" value="暂停报名" disabled>
                         <?}else{?>
                             <input type="submit" class="greenbtn3" value="已经结束" disabled>
