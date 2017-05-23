@@ -54,6 +54,8 @@ class VolunteerController extends Controller_Base {
             if($volunteer['password'] == $_POST['password']){
                 $this->session->user = $volunteer;
                 Msg::ajax('',1,'/volunteer/index');
+            }else{
+                Msg::ajax('密码不正确或者学号输入错误',1,'/volunteer/login');
             }
         }
 
@@ -99,7 +101,7 @@ class VolunteerController extends Controller_Base {
             }
             $model_volunteer = new VolunteerModel();
             if($model_volunteer->register_data()){
-                Msg::ajax("注册成功！赶快去登录完善一下个人信息哦～以便于我们与你取得联系。",1,"/volunteer/login");
+                Msg::ajax("注册成功！赶快去登录完善一下个人信息哦～以便于我们与你取得联系。祝生活愉快！",1,"/volunteer/login");
             }
 
         }

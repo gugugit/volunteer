@@ -17,19 +17,30 @@ class IndexController extends Controller_Base {
     public function activitydetailAction($id = 0){
 
        if("POST" == $_SERVER['REQUEST_METHOD']){
+//           Msg::ajax("报名成功！");
 
            $model_activolunteer = new ActivolunteerModel();
            $model_activity = new ActivityModel();
 
-           if($model_activolunteer->activity_register()){
-               $already_num_array = $model_activity->query("select already_num from activity where id={$_POST['activityid']} ");
+           $data = $model_activolunteer->field('activity_id')->table('activity_volunteer')->where("volunteer_id={$_POST['volunteer_id']}")->fList();
 
-               $already_num_array['0']['already_num'] = $already_num_array['0']['already_num'] + 1 ;
+           foreach ($data as $value){
+               if($value['activity_id'] == $_POST['activity_id']){
+                   Msg::ajax("你已经报名了该活动，请勿重复报名");
+               }
+           }
 
-               $model_activity->where("id={$_POST['activityid']}")->update(array('already_num' => $already_num_array['0']['already_num']));
+          if($_POST['volunteer_id']){
+              $model_activolunteer->insert($_POST);
 
-               Msg::ajax("报名成功！");
-           }else{
+              $already_num_array = $model_activity->query("select already_num from activity where id={$_POST['activity_id']} ");
+
+              $already_num_array['0']['already_num'] = $already_num_array['0']['already_num'] + 1 ;
+
+              $model_activity->where("id={$_POST['activity_id']}")->update(array('already_num' => $already_num_array['0']['already_num']));
+
+              Msg::ajax("报名成功！");
+          }else{
                Msg::ajax("热爱志愿的你，要先登录噢～",1,"/volunteer/login");
            }
 

@@ -36,8 +36,8 @@
 
 <!--                    报名按钮-->
                     <form id="form-activitydetail">
-                       <input type="hidden" name="activityid" value="<?=$value['id']?>">
-                        <input type="hidden" name="volunteerid" value="<?=$this->user['id']?>">
+                       <input type="hidden" name="activity_id" value="<?=$value['id']?>">
+                        <input type="hidden" name="volunteer_id" value="<?=$this->user['id']?>">
 
                         <?
                         $condition = date('Ymd',strtotime($value['end_time'])) - date('Ymd',time());
@@ -90,7 +90,7 @@
             <div class="zyd-tab mar-t20 mar-r20 f_l">
                 <div id="fixed" style="position: relative; top: 0px;" class="">
                     <ul class="tabnav cf">
-                        <li class="active">志愿详情</li>
+                        <li class="active">活动详情</li>
                     </ul>
                 </div>
                 <!--tabcon -->

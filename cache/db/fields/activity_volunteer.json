@@ -1,0 +1,1 @@
+{"activity_id":{"type":"int(11) unsigned","default":null,"comment":"志愿活动ID"},"volunteer_id":{"type":"int(11) unsigned","default":null,"comment":"志愿者ID"},"created_at":{"type":"timestamp","default":"CURRENT_TIMESTAMP","comment":"报名时间"}}
