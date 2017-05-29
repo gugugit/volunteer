@@ -92,13 +92,13 @@ function menu_link($txt, $link, $act = ''){
 
 			<li class="start<? if (stripos($_SERVER['REQUEST_URI'], 'admin/index/index')) echo ' active' ?>">
 				<a href="/admin/index/index/">
-					<i class="icon-home"></i><span class="title">控制面板</span><span class="selected"></span>
+					<i class="icon-th-large"></i><span class="title">控制面板</span><span class="selected"></span>
 				</a>
 			</li>
 
 			<li<? if (stripos($_SERVER['REQUEST_URI'], '/admin/introduce/list')) echo ' class="active"' ?>>
 				<a>
-					<i class="icon-group"></i><span class="title">总队简介管理</span><span class="arrow"></span>
+					<i class="icon-volume-up"></i><span class="title">简介管理</span><span class="arrow"></span>
 				</a>
 				<ul class="sub-menu">
 					<? menu_link('总队简介', '/admin/introduce/list') ?>
@@ -108,7 +108,7 @@ function menu_link($txt, $link, $act = ''){
 
 			<li<? if (stripos($_SERVER['REQUEST_URI'], '/admin/base/list')) echo ' class="active"' ?>>
 				<a>
-					<i class="icon-comment"></i>
+					<i class="icon-home"></i>
 					<span class="title">基地管理</span>
 					<span class="arrow"></span>
 				</a>
@@ -131,7 +131,7 @@ function menu_link($txt, $link, $act = ''){
 
             <li<? if (stripos($_SERVER['REQUEST_URI'], 'volunteer')) echo ' class="active"' ?>>
                 <a>
-                    <i class="icon-user"></i>
+                    <i class="icon-group"></i>
                     <span class="title">志愿者管理</span>
                     <span class="arrow"></span>
                 </a>
@@ -143,8 +143,8 @@ function menu_link($txt, $link, $act = ''){
 
             <li<? if (stripos($_SERVER['REQUEST_URI'], 'discuss')) echo ' class="active"' ?>>
                 <a>
-                    <i class="icon-user"></i>
-                    <span class="title">志愿者分享文章管理</span>
+                    <i class="icon-book"></i>
+                    <span class="title">分享文章管理</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
@@ -154,8 +154,8 @@ function menu_link($txt, $link, $act = ''){
 
             <li<? if (stripos($_SERVER['REQUEST_URI'], 'activity')) echo ' class="active"' ?>>
                 <a>
-                    <i class="icon-user"></i>
-                    <span class="title">志愿活动管理</span>
+                    <i class="icon-dashboard"></i>
+                    <span class="title">活动管理</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">

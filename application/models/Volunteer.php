@@ -79,13 +79,22 @@ class VolunteerModel extends Db_Mysql {
     );
 
     /**
+     * 盐密
+     */
+    static function saltpw($pw, $salt)
+    {
+        return md5(md5($pw) . ', ' . $salt);
+    }
+
+    /**
      * 用户提交注册数据
     */
     public function register_data(){
         $register_data = array(
             'username' => $_POST['username'],
             'student_id' => $_POST['studentid'],
-            'password' => $_POST['password'],
+            'salt'=>($salt = rand(100000, 999999)),
+            'password' => self::saltpw($_POST['password'],$salt),
             'email' => $_POST['email'],
             'mobile' => $_POST['mobile']
         );

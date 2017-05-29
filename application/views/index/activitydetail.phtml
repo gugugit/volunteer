@@ -46,7 +46,7 @@
 
                         if(($condition>1 || $condition == 1) && ($num != 0)){?>
                                 <input type="submit" class="greenbtn2" value="立即报名">
-                        <?}else if(0 == $condition || $num == 0){?>
+                        <?}else if(0 == $condition || ($num == 0 ) && ($condition>1 || $condition == 1)){?>
                             <input type="submit"  class="greenbtn1" value="暂停报名" disabled>
                         <?}else{?>
                             <input type="submit" class="greenbtn3" value="已经结束" disabled>
@@ -68,7 +68,7 @@
                         </span>
                         </p>
 
-                    <?}else if(0 == $condition || $num == 0){?>
+                    <?}else if(0 == $condition || ($num == 0 ) && ($condition>1 || $condition == 1)){?>
                         <p class="time">
                             <span>目前<?=$value['already_num']?>人报名</span>
                             <span>服务时长：<?=$value['service_hour']?> 小时</span>

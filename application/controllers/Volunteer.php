@@ -32,6 +32,48 @@ class VolunteerController extends Controller_Base {
         $this->assign('datas',$datas);
 
     }
+    /**
+     * 修改个人密码
+    */
+    public function changepwAction(){
+        $model_volunteer = new VolunteerModel();
+
+        if('POST' == $_SERVER['REQUEST_METHOD']){
+            if(empty($_POST['pw'])){
+                Msg::ajax('请输入登录密码');
+            }
+            if(empty($_POST['newpw'])){
+                Msg::ajax('请输入新密码');
+            }
+            if(empty($_POST['re_newpw'])){
+                Msg::ajax('请再次输入新密码');
+            }
+            if($_POST['newpw'] != $_POST['re_newpw']){
+                Msg::ajax('两次输入的新密码不一致，请重新输入');
+            }
+
+            #查询当前用户的数据信息
+            $volunteer = $model_volunteer->where("id = {$this->user['id']}")->fRow();
+
+            if($volunteer['password'] == md5(md5($_POST['pw']).', '.$volunteer['salt'])){
+
+                $_POST['password'] = VolunteerModel::saltpw($_POST['newpw'],$volunteer['salt']);
+                unset($_POST['pw']);
+                unset($_POST['newpw']);
+                unset($_POST['re_newpw']);
+
+                if(!$model_volunteer->where("id = {$this->user['id']}")->update($_POST)){
+                    Msg::ajax('修改失败，请联系管理员');
+                }
+                Msg::ajax('修改成功');
+
+            }else{
+                Msg::ajax('输入登录密码不正确,请重新输入');
+            }
+
+        }
+
+    }
 
     /**
      *
@@ -45,13 +87,11 @@ class VolunteerController extends Controller_Base {
             if(!\Helper\Validate::is_number($_POST['studentid'])){
                 Msg::ajax("学号格式错误，请重新输入");
             }
-
             $model_volunteer = new VolunteerModel();
             if(!$volunteer = $model_volunteer->where("student_id='{$_POST['studentid']}'")->fRow()){
                 Msg::ajax("该学号没有注册呢，请先注册一下");
             }
-
-            if($volunteer['password'] == $_POST['password']){
+            if($volunteer['password'] == md5(md5($_POST['password']).', '.$volunteer['salt'])){
                 $this->session->user = $volunteer;
                 Msg::ajax('',1,'/volunteer/index');
             }else{

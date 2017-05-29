@@ -15,10 +15,7 @@ class IndexController extends Controller_Base {
      * 活动详情
     */
     public function activitydetailAction($id = 0){
-
        if("POST" == $_SERVER['REQUEST_METHOD']){
-//           Msg::ajax("报名成功！");
-
            $model_activolunteer = new ActivolunteerModel();
            $model_activity = new ActivityModel();
 
@@ -29,7 +26,6 @@ class IndexController extends Controller_Base {
                    Msg::ajax("你已经报名了该活动，请勿重复报名");
                }
            }
-
           if($_POST['volunteer_id']){
               $model_activolunteer->insert($_POST);
 
@@ -43,7 +39,6 @@ class IndexController extends Controller_Base {
           }else{
                Msg::ajax("热爱志愿的你，要先登录噢～",1,"/volunteer/login");
            }
-
        }else{
            $mActivity = new ActivityModel();
            if(!($id = (int)$id) || !$value = $mActivity->fRow($id)){

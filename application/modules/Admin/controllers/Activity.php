@@ -45,7 +45,6 @@ class ActivityController extends Controller_Admin{
                 if(!isset($_FILES['img'])){
                     Msg::js('请选择上传图片');
                 }
-
                 if(empty($_POST['content'])){
                     Msg::js('活动详情不能为空');
                 }
@@ -54,27 +53,20 @@ class ActivityController extends Controller_Admin{
                 $_POST['updated_at'] = date('Y-m-d h:i:s',time());
             }
             $_POST['img'] = '/uploag/1.jpg';
-
             if($id){
-//                print_r($_POST);exit;
                 $_POST['id'] = $id;
                 unset($_POST['img']);
                 $model_activity->update($_POST);
                 Msg::js('更新成功','/admin/activity/list');
             }else{
-
                 $id = $model_activity->insert($_POST);
-
                 $upload = $_FILES['img']['tmp_name'];
-
                 if(!empty($upload)){
                     $path = APP_PATH . '/public/upload/activity/' . $id . '/';
                     $model_activity->where("id={$id}")->update(['img'=>"/upload/activity/{$id}/0.gif"]);
                     if(Helper\File::upimgs($path,'img'))  Msg::js('添加成功','/admin/activity/list');
                 }
-
             }
-
         }
         # if
         if($id){
@@ -83,7 +75,6 @@ class ActivityController extends Controller_Admin{
             $this->assign('datas',$datas);
             $this->seo("活动编辑");
         }
-
     }
 
     /**
