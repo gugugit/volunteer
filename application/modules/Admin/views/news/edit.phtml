@@ -1,0 +1,36 @@
+<script type="text/javascript" src="/assets/model_editor/news_editor/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/assets/model_editor/news_editor/ueditor/ueditor.all.js"></script>
+<script type="text/javascript" src="/assets/model_editor/news_editor/ueditor/lang/zh-cn/zh-cn.js"></script>
+
+<link href="/assets/date/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+
+<style>
+    .top-news a {padding: 0px;TEXT-DECORATION:none}
+</style>
+<div class="col-md-12 news-page blog-page">
+    <form method="post" action="" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-md-9 blog-tag-data">
+                <div class="post-comment">
+
+                    <div class="form-group">
+                        <label class="control-label">新闻标题</label>
+                        <input type="text" name="caption" value="<?=$datas['caption']?>" class="form-control" style="width: 50%"/>
+                    </div>
+
+                    <label class="control-label">新闻内容:</label>
+                    <!--content 开始-->
+                    <script type="text/plain" id="container"><?=$datas['content']?></script>
+                    <script>
+                        window.UEDITOR_CONFIG.savePath= ['upload/news'];
+                        var editor = UE.getEditor('container');
+                    </script>
+                    <!--Content 结束-->
+                    <button class="btn blue margin-top-10" type="submit">提交</button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>

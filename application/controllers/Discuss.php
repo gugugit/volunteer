@@ -49,7 +49,7 @@ class DiscussController extends Controller_Base{
 
             $this->assign('datas',$datas);
         }else{
-            Msg::ajax('sorry～你访问的页面被外星人带走啦',1,'/discuss/list');
+            Msg::js('sorry～你访问的页面被外星人带走啦',1,'/discuss/list');
         }
     }
 
