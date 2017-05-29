@@ -7,8 +7,20 @@ class IndexController extends Controller_Base {
     */
     public function indexAction() {//默认Action
         $mActivity = new ActivityModel();
-        $datas = $this->_list($mActivity,"status=1&L=16");
-        $this->assign("datas",$datas);
+
+        if('POST' == $_SERVER['REQUEST_METHOD']){
+            if(empty($_POST['soso'])||!\Helper\Validate::safe($_POST['soso'])){
+                Msg::js('请输入搜索的内容');
+            }
+            $datas = $this->_list($mActivity,"status=1&L=16&caption=LIKE *{$_POST['soso']}*");
+            if(empty($datas)){
+                Msg::js('没有您要查询的内容,请重新输入',0);
+            }
+            $this->assign("datas",$datas);
+        }else{
+            $datas = $this->_list($mActivity,"status=1&L=16");
+            $this->assign("datas",$datas);
+        }
     }
 
     /**

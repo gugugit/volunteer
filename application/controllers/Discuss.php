@@ -73,9 +73,6 @@ class DiscussController extends Controller_Base{
 
     }
 
-
-
-
     /**
      * 图片上传处理
      */

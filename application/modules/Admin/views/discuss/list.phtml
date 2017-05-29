@@ -15,7 +15,7 @@
 			<tr>
 				<td><?=$v1['id']?></td>
 
-				<td><?=mb_substr($v1['caption'],0,30)?></td>
+				<td><?=mb_substr($v1['caption'],0,15,'utf-8')?></td>
                 <td><?=$v1['created_at']?></td>
 				<td>
                     <a class="btn btn-xs red" onclick="discussdel(<?=$v1['id']?>)"><i class="icon-remove"></i> 删除</a>

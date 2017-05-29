@@ -28,12 +28,14 @@
             <li><a href="/rank/ranking/">志愿排行榜</a></li>
             <li><a href="/index/index/index">联系我们</a></li>
         </ul>
-        <form action="##" class="navbar-form navbar-right" rol="search">
+
+        <form action="/index/index/index" method="post" class="navbar-form navbar-right" rol="search">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="志愿啦" />
+                <input type="text" class="form-control" name="soso" placeholder="我感兴趣的志愿活动" />
             </div>
             <button type="submit" class="btn btn-default">立刻搜索</button>
         </form>
+
        <?php if(empty($this->user['mobile'])){
            echo '<ul class="nav navbar-nav navbar-right">
             <li><a href="/volunteer/login">登录</a></li>

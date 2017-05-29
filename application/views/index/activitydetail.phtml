@@ -40,7 +40,10 @@
                         <input type="hidden" name="volunteer_id" value="<?=$this->user['id']?>">
 
                         <?
-                        $condition = date('Ymd',strtotime($value['end_time'])) - date('Ymd',time());
+
+                        $day = (strtotime($value['end_time']) - time())/(24*3600);
+                        $day = floor($day);
+                        $condition = $day;
 
                         $num = $value['limit_num'] - $value['already_num'];
 
@@ -56,7 +59,10 @@
 <!--                    报名按钮-->
 
                     <?
-                    $condition = date('Ymd',strtotime($value['end_time'])) - date('Ymd',time());
+                    $day = (strtotime($value['end_time']) - time())/(24*3600);
+                    $day = floor($day);
+                    $condition = $day;
+
                     $num = $value['limit_num'] - $value['already_num'];
                     if(($condition>1 || $condition == 1)&& ($num != 0)){?>
                         <p class="time">

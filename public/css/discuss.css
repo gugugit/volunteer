@@ -11879,6 +11879,16 @@ textarea.reply-input.reply-input-textarea {
     margin-bottom: 20px;
     line-height: 1.8
 }
+.post-topic-des img{
+    max-width: 650px;
+    height: auto;
+    margin: 10px 0;
+    vertical-align: middle;
+    border: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
 
 .post-topic-des p {
     line-height: 1.8;

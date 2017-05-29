@@ -41,10 +41,19 @@
 <!--中间标题-->
 <div style="text-align:center;">
     <h3>总队成员</h3>
+    <br/>
+    <form action="/member/index" method="post" class="navbar-form"  rol="search">
+        <div class="form-group">
+            <input type="text" class="form-control" name="soso" placeholder="请输入成员姓名" />
+        </div>
+        <button type="submit" class="btn btn-warning">搜一搜</button>
+    </form>
+
 </div>
 <!--中间标题-->
 <!--活动列表开始-->
 <div class="container">
+
     <!--缩略图列表开始-->
     <div class="row">
         <? foreach ($datas as $v){?>
