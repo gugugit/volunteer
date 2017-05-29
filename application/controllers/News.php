@@ -6,7 +6,7 @@ class NewsController extends Controller_Base{
     */
     public function listAction(){
         $mNews = new NewsModel();
-        $datas = $this->_list($mNews,'L=16&status=1');
+        $datas = $this->_list($mNews,'L=8&status=1');
         $this->assign('datas',$datas);
     }
 

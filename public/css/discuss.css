@@ -4872,64 +4872,9 @@ input[readonly],textarea[readonly] {
     color: #ff5400
 }
 
-.pagination {
-    position: relative;
-    text-align: center;
-    white-space: nowrap;
-    margin: 20px 0 0;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: -4px
-}
-
-.pagination li {
-    letter-spacing: 0;
-    margin-right: 5px;
-    vertical-align: top;
-    display: inline-block;
-    *zoom: 1;
-    *display: inline
-}
-
-.pagination li:last-child {
-    margin-right: 0
-}
-
-.pagination ul li.active>a,.pagination ul li.active>span {
-    background: #00bc9b;
-    color: #FFF
-}
-
-.ellipsis-pager,.pagination a {
-    display: block;
-    width: 30px;
-    height: 30px;
-    border: 1px solid #00bc9b;
-    color: #00bc9b;
-    text-align: center;
-    line-height: 30px
-}
-
 .ellipsis-pager {
     border: none;
     font-size: 18px
-}
-
-.pagination a:hover {
-    background: #00bc9b;
-    color: #FFF
-}
-
-.pagination .txt-pager a {
-    width: auto;
-    padding: 0 10px
-}
-
-.pagination .disabled a,.pagination .disabled a:hover {
-    color: #999;
-    border-color: #e1e1e1;
-    background: #FFF;
-    cursor: not-allowed
 }
 
 .mini-pager .ellipsis-pager,.mini-pager.pagination a {
@@ -11872,7 +11817,7 @@ textarea.reply-input.reply-input-textarea {
 
 .post-topic-main {
     padding: 20px;
-    font-size: 14px
+    font-size: 16px
 }
 
 .post-topic-des {

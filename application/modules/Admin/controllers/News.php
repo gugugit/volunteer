@@ -31,6 +31,8 @@ class NewsController extends Controller_Admin{
                 }
                 if($news_id = $mNews->insert($_POST)){
                     Msg::js('添加成功', '/admin/news/list');
+                }else{
+                    Msg::js('添加失败,请联系开发人员');
                 }
             }
             if($id) {
