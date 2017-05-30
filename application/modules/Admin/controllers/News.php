@@ -9,7 +9,7 @@ class NewsController extends Controller_Admin{
     public function listAction(){
         $this->seo("新闻列表");
         $mNew = new NewsModel();
-        $this->search('id', array('id' => '新闻ID', 'caption' => '新闻标题','status'=>'0线下|1线上'));
+        $this->search('id', array('id' => '新闻ID'));
         $datas = $this->_list($mNew);
         $this->assign("datas",$datas);
     }
@@ -18,6 +18,9 @@ class NewsController extends Controller_Admin{
         $this->seo("新闻添加");
     }
 
+    /**
+     * 新闻编辑
+    */
     public function editAction($id = 0){
         $this->seo("新闻编辑");
         $mNews = new NewsModel();

@@ -106,6 +106,17 @@ function menu_link($txt, $link, $act = ''){
 				</ul>
 			</li>
 
+            <li<? if (stripos($_SERVER['REQUEST_URI'], 'export')) echo ' class="active"' ?>>
+                <a>
+                    <i class="icon-share-alt"></i>
+                    <span class="title">信息导出</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <? menu_link('志愿者信息导出', '/admin/export/index') ?>
+                </ul>
+            </li>
+
 			<li<? if (stripos($_SERVER['REQUEST_URI'], '/admin/base/list')) echo ' class="active"' ?>>
 				<a>
 					<i class="icon-home"></i>
@@ -175,7 +186,6 @@ function menu_link($txt, $link, $act = ''){
                     <? menu_link('新闻添加', '/admin/news/add') ?>
                 </ul>
             </li>
-
 
 		</ul>
 	</div>

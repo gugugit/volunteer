@@ -1,0 +1,92 @@
+<link href="/assets/date/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+
+
+<style>
+    .top-news a {padding: 0px;TEXT-DECORATION:none}
+</style>
+<div class="col-md-12 news-page blog-page">
+
+    <form method="post" action="" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-md-9 blog-tag-data">
+
+                <div class="post-comment">
+
+                    <button class="btn blue margin-top-10" type="submit">导出CSV</button>
+
+<!--                    <div class="form-group">-->
+<!--                        <label class="control-label">选择年级:</label>-->
+<!--                        <select name="class_id">-->
+<!--                            <option value="2013">2013级</option>-->
+<!--                            <option value="2014">2014级</option>-->
+<!--                        </select>-->
+<!--                    </div>-->
+<!---->
+<!--                    <!--                    开始时间-->
+<!--                    <div class="control-group">-->
+<!--                        <label class="control-label">开始时间：</label>-->
+<!--                        <div class="controls input-append date form_time_start" data-date="" data-date-format="yyyy-mm-dd hh:ii:ss" data-link-field="dtp_input_start" data-link-format="yyyy-mm-dd hh:ii:ss">-->
+<!--                            <input size="30" type="text" value="" readonly>-->
+<!--                            <span class="add-on"><i class="icon-remove"></i></span>-->
+<!--                            <span class="add-on"><i class="icon-th"></i></span>-->
+<!--                        </div>-->
+<!--                        <input type="hidden" name="start_time" id="dtp_input_start" value="" /><br/>-->
+<!--                    </div>-->
+<!--                    <!--                        结束时间-->
+<!--                    <div class="control-group">-->
+<!--                        <label class="control-label">结束时间：</label>-->
+<!--                        <div class="controls input-append date form_time_end" data-date="" data-date-format="yyyy-mm-dd hh:ii:ss" data-link-field="dtp_input_end" data-link-format="yyyy-mm-dd hh:ii:ss">-->
+<!--                            <input size="30" type="text" value="" readonly>-->
+<!--                            <span class="add-on"><i class="icon-remove"></i></span>-->
+<!--                            <span class="add-on"><i class="icon-th"></i></span>-->
+<!--                        </div>-->
+<!--                        <input type="hidden" name="end_time" id="dtp_input_end" value="" /><br/>-->
+<!--                    </div>-->
+
+<!--                    <button class="btn blue margin-top-10" type="submit">导出</button>-->
+
+                </div>
+            </div>
+
+        </div>
+    </form>
+
+
+</div>
+
+<script type="text/javascript" src="/assets/date/jquery/jquery-1.8.3.min.js" charset="UTF-8"></script>
+<script type="text/javascript" src="/assets/date/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/date/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="/assets/date/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+
+<script type="text/javascript">
+
+    $('.form_time_start').datetimepicker({
+        language:  'zh-CN',
+        format: "yyyy-mm-dd hh:ii:ss",
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 1,
+        minView: 0,
+        maxView: 1,
+        forceParse: 0,
+        pickerPosition: "bottom-left"
+    });
+
+    $('.form_time_end').datetimepicker({
+        language:  'zh-CN',
+        format: "yyyy-mm-dd hh:ii:ss",
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 1,
+        minView: 0,
+        maxView: 1,
+        forceParse: 0,
+        pickerPosition: "bottom-left"
+    });
+
+</script>

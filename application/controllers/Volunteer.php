@@ -20,17 +20,14 @@ class VolunteerController extends Controller_Base {
     {
         $model_volunteer = new VolunteerModel();
         if('POST' == $_SERVER['REQUEST_METHOD']){
-
             if(!$model_volunteer->where("id = {$this->user['id']}")->update($_POST)){
                 Msg::ajax('保存失败,请联系开发人员');
             }
             Msg::ajax('保存成功',1,'/volunteer/index');
         }
-
         $datas = $this->_list($model_volunteer,"id={$this->user['id']}");
 
         $this->assign('datas',$datas);
-
     }
     /**
      * 修改个人密码
