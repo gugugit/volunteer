@@ -109,11 +109,12 @@ function menu_link($txt, $link, $act = ''){
             <li<? if (stripos($_SERVER['REQUEST_URI'], 'export')) echo ' class="active"' ?>>
                 <a>
                     <i class="icon-share-alt"></i>
-                    <span class="title">信息导出</span>
+                    <span class="title">信息导出导入</span>
                     <span class="arrow"></span>
                 </a>
                 <ul class="sub-menu">
-                    <? menu_link('志愿者信息导出', '/admin/export/index') ?>
+                    <? menu_link('志愿者信息导出', '/admin/export/export') ?>
+                    <? menu_link('志愿者信息导入', '/admin/export/import') ?>
                 </ul>
             </li>
 

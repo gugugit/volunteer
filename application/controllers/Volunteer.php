@@ -21,7 +21,7 @@ class VolunteerController extends Controller_Base {
         $model_volunteer = new VolunteerModel();
         if('POST' == $_SERVER['REQUEST_METHOD']){
             if(!$model_volunteer->where("id = {$this->user['id']}")->update($_POST)){
-                Msg::ajax('保存失败,请联系开发人员');
+                Msg::ajax('请完善全部信息再保存！保存之前务必确保信息都正确。');
             }
             Msg::ajax('保存成功',1,'/volunteer/index');
         }
