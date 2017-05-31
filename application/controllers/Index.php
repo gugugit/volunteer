@@ -30,6 +30,7 @@ class IndexController extends Controller_Base {
        if("POST" == $_SERVER['REQUEST_METHOD']){
            $model_activolunteer = new ActivolunteerModel();
            $model_activity = new ActivityModel();
+           $mActivity = new ActivityModel();
 
            $data = $model_activolunteer->field('activity_id')->table('activity_volunteer')->where("volunteer_id={$_POST['volunteer_id']}")->fList();
 
@@ -39,8 +40,9 @@ class IndexController extends Controller_Base {
                }
            }
           if($_POST['volunteer_id']){
+              $data= $mActivity->where("id={$_POST['activity_id']}")->fRow();
+              $_POST['service_hour'] = $data['service_hour'];
               $model_activolunteer->insert($_POST);
-
               $already_num_array = $model_activity->query("select already_num from activity where id={$_POST['activity_id']} ");
 
               $already_num_array['0']['already_num'] = $already_num_array['0']['already_num'] + 1 ;

@@ -11,7 +11,7 @@ class ExportController extends Controller_Admin{
         $mExport = new ExportModel();
         if('POST' == $_SERVER['REQUEST_METHOD']){
             $result = $mVolunteer->query('select v.username,v.student_id,v.class,a.full_name,v.sex,v.service_hour from volunteer v,academy a where v.academy_id = a.id');
-            $head_str = "姓名,学号,班级,学院,性别,志愿服务时间\n";
+            $head_str = "姓名,学号,班级,学院,性别,志愿时间\n";
             $head_str = iconv('utf-8','gb2312',$head_str);
             foreach ($result as $k => $v){
                 $v['sex'] = $v['sex']?'男':'女';

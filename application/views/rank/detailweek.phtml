@@ -34,7 +34,7 @@
         <div class="nk-content"  style="padding: 7% 0 0 0;">
             <div class="module-box">
                 <div class="module-head clearfix">
-                    <h1>日排名</h1>
+                    <h1>周排名</h1>
                 </div>
                 <div class="module-body">
                     <div class="menu-box">
@@ -53,11 +53,11 @@
                         </tr>
 
                         <?
-                        $count = 1;
-                        foreach ($day_datas as $k => $v){?>
+                        $week_count = 1;
+                        foreach ($week_datas as $k => $v){?>
 
                         <tr>
-                            <td> <span class="browse-num top-browse top1"> <?=$count++?> </span> </td>
+                            <td> <span class="browse-num top-browse top1"> <?=$week_count++?> </span> </td>
                             <td class="txt-left">
                                 <div class="nker-info">
                                     <a class="nker-name level-color-6" data-card-uid="1724" href="#" data-card-index="2"><?=$v['username']?></a>
@@ -67,7 +67,7 @@
                             <?}else{?>
                                <td><?=mb_substr($v['content'],0,10,'utf-8')?></td>
                             <?}?>
-                            <td class="js-follow-count"><?=$v['service_hour']?>小时</td>
+                            <td class="js-follow-count"><?=$v['week_sum_hour']?>小时</td>
                         </tr>
 
                         <?}?>

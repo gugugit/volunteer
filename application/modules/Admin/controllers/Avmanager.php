@@ -10,9 +10,8 @@ class AvmanagerController extends Controller_Admin{
         $this->seo('参与管理');
 
         $mAvmanager = new ActivolunteerModel();
-
+        $this->search('activity_id', array('activity_id' => '活动ID','volunteer_id'=>'志愿者ID'));
         $datas = $this->_list($mAvmanager);
-
         $this->assign('datas',$datas);
     }
     /**

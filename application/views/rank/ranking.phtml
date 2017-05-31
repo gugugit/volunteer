@@ -54,22 +54,32 @@
                             <tr>
                                 <td width="60">排行</td>
                                 <td width="150">用户</td>
-                                <td width="80">时间</td>
+                                <td width="150">志愿时间</td>
                             </tr>
+
+
+                            <?
+                            $day_count = 1;
+                            foreach ($day_datas as $k => $v){?>
+
                             <tr>
-                                <td> <span class="browse-num top-browse top1"> 1 </span> </td>
+                                <td> <span class="browse-num top-browse top1"> <?=$day_count++?></span> </td>
                                 <td>
                                     <div class="list-name">
-                                        <a class="level-color-6" data-card-uid="1724" href="https://www.nowcoder.com/profile/1724" data-card-index="2"> 毛坚持 </a>
+                                        <a class="level-color-6" data-card-uid="#" href="#" data-card-index="2"> <?=$v['username']?> </a>
                                     </div> </td>
-                                <td> 541 </td>
+                                <td> <?=$v['service_hour']?>小时</td>
                             </tr>
+                            <?}?>
+
                             </tbody>
                         </table>
                         <a href="/rank/detailday" class="all-honor-list js-sort-0">查看全部榜单 &gt;</a>
                     </div>
                 </div>
 <!--                日-->
+
+
                 <!--                周-->
                 <div class="module-box">
                     <div class="module-head clearfix">
@@ -88,19 +98,24 @@
                             <tr>
                                 <td width="60">排行</td>
                                 <td width="150">用户</td>
-                                <td width="80">时间</td>
+                                <td width="150">志愿时间</td>
                             </tr>
+
+                            <?
+                            $week_count = 1;
+                            foreach ($week_datas as $k => $v){?>
                             <tr>
-                                <td> <span class="browse-num top-browse top1"> 1 </span> </td>
+                                <td> <span class="browse-num top-browse top1"><?=$week_count++?></span> </td>
                                 <td>
                                     <div class="list-name">
-                                        <a class="level-color-6" data-card-uid="1724" href="https://www.nowcoder.com/profile/1724" data-card-index="2"> 毛坚持 </a>
+                                        <a class="level-color-6" data-card-uid="1724" href="#" data-card-index="2"><?=$v['username']?></a>
                                     </div> </td>
-                                <td> 541 </td>
+                                <td><?=$v['week_sum_hour']?>小时</td>
                             </tr>
+                            <?}?>
                             </tbody>
                         </table>
-                        <a href="#" class="all-honor-list js-sort-0">查看全部榜单 &gt;</a>
+                        <a href="/rank/detailweek" class="all-honor-list js-sort-0">查看全部榜单 &gt;</a>
                     </div>
                 </div>
                 <!--                周-->
@@ -122,19 +137,24 @@
                             <tr>
                                 <td width="60">排行</td>
                                 <td width="150">用户</td>
-                                <td width="80">时间</td>
+                                <td width="150">志愿时间</td>
                             </tr>
+                            <?
+                            $month_count = 1;
+                            foreach ($month_datas as $k => $v){
+                            ?>
                             <tr>
-                                <td> <span class="browse-num top-browse top1"> 1 </span> </td>
+                                <td> <span class="browse-num top-browse top1"><?=$month_count++?></span> </td>
                                 <td>
                                     <div class="list-name">
-                                        <a class="level-color-6" data-card-uid="1724" href="https://www.nowcoder.com/profile/1724" data-card-index="2"> 毛坚持 </a>
+                                        <a class="level-color-6" data-card-uid="1724" href="#" data-card-index="2"><?=$v['username']?></a>
                                     </div> </td>
-                                <td> 541 </td>
+                                <td><?=$v['month_sum_hour']?>小时</td>
                             </tr>
+                            <?}?>
                             </tbody>
                         </table>
-                        <a href="#" class="all-honor-list js-sort-0">查看全部榜单 &gt;</a>
+                        <a href="/rank/detailmonth" class="all-honor-list js-sort-0">查看全部榜单 &gt;</a>
                     </div>
                 </div>
                 <!--                月-->
@@ -156,19 +176,24 @@
                             <tr>
                                 <td width="60">排行</td>
                                 <td width="150">用户</td>
-                                <td width="80">时间</td>
+                                <td width="150">志愿时间</td>
                             </tr>
+
+                            <?
+                            $quarter_count = 1;
+                            foreach ($quarter_datas as $k => $v){?>
                             <tr>
-                                <td> <span class="browse-num top-browse top1"> 1 </span> </td>
+                                <td> <span class="browse-num top-browse top1"><?=$quarter_count++?></span> </td>
                                 <td>
                                     <div class="list-name">
-                                        <a class="level-color-6" data-card-uid="1724" href="https://www.nowcoder.com/profile/1724" data-card-index="2"> 毛坚持 </a>
+                                        <a class="level-color-6" data-card-uid="1724" href="#" data-card-index="2"><?=$v['username']?></a>
                                     </div> </td>
-                                <td> 541 </td>
+                                <td><?=$v['quarter_sum_hour']?>小时</td>
                             </tr>
+                            <?}?>
                             </tbody>
                         </table>
-                        <a href="#" class="all-honor-list js-sort-0">查看全部榜单 &gt;</a>
+                        <a href="/rank/detailquarter" class="all-honor-list js-sort-0">查看全部榜单 &gt;</a>
                     </div>
                 </div>
                 <!--                季度-->
@@ -190,19 +215,24 @@
                             <tr>
                                 <td width="60">排行</td>
                                 <td width="150">用户</td>
-                                <td width="80">时间</td>
+                                <td width="150">志愿时间</td>
                             </tr>
+
+                            <?
+                            $year_count = 1;
+                            foreach ($year_datas as $k => $v){?>
                             <tr>
-                                <td> <span class="browse-num top-browse top1"> 1 </span> </td>
+                                <td> <span class="browse-num top-browse top1"><?=$year_count++?></span> </td>
                                 <td>
                                     <div class="list-name">
-                                        <a class="level-color-6" data-card-uid="1724" href="https://www.nowcoder.com/profile/1724" data-card-index="2"> 毛坚持 </a>
+                                        <a class="level-color-6" data-card-uid="1724" href="#" data-card-index="2"><?=$v['username']?></a>
                                     </div> </td>
-                                <td> 541 </td>
+                                <td><?=$v['year_sum_hour']?>小时</td>
                             </tr>
+                            <?}?>
                             </tbody>
                         </table>
-                        <a href="#" class="all-honor-list js-sort-0">查看全部榜单 &gt;</a>
+                        <a href="/rank/detailyear" class="all-honor-list js-sort-0">查看全部榜单 &gt;</a>
                     </div>
                 </div>
                 <!--                年-->

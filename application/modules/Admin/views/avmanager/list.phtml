@@ -16,7 +16,7 @@
         foreach ($datas as $k1 => $v1) {?>
             <tr>
                 <td><?=$v1["activity_id"]?></td>
-                <td><?=$v1["volunteer_id"]?></td>
+                <td><a href="/admin/volunteer/detail/id/<?=$v1["volunteer_id"]?>"><?=$v1["volunteer_id"]?><i class="btn btn-sm icon-link"></i></a></td>
                 <td><?=$v1["service_hour"]?>小时</td>
                 <td>
                     <? foreach (ActivolunteerModel::$join_status as $k2 => $v2) { ?>

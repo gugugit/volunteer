@@ -17,7 +17,6 @@ class ActivolunteerModel extends Db_Mysql{
 
     #用户报名活动数据
     public function activity_register(){
-
         $activity_register = array(
             'activity_id' => $_POST['activityid'],
             'volunteer_id' => $_POST['volunteerid'],
