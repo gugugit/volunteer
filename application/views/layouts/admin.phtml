@@ -118,6 +118,17 @@ function menu_link($txt, $link, $act = ''){
                 </ul>
             </li>
 
+            <li<? if (stripos($_SERVER['REQUEST_URI'], 'avmanager')) echo ' class="active"' ?>>
+                <a>
+                    <i class="icon-legal"></i>
+                    <span class="title">参与管理</span>
+                    <span class="arrow"></span>
+                </a>
+                <ul class="sub-menu">
+                    <? menu_link('管理列表', '/admin/avmanager/list') ?>
+                </ul>
+            </li>
+
 			<li<? if (stripos($_SERVER['REQUEST_URI'], '/admin/base/list')) echo ' class="active"' ?>>
 				<a>
 					<i class="icon-home"></i>

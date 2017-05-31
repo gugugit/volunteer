@@ -1,0 +1,56 @@
+<div role="grid" class="dataTables_wrapper form-inline">
+    <table class="table table-striped table-bordered table-hover dataTable">
+        <thead>
+        <tr>
+            <th>活动ID</th>
+            <th>志愿者ID</th>
+            <th>志愿时长</th>
+            <th>参与状态</th>
+            <th>报名时间</th>
+            <th>确认时间</th>
+            <th width="180px">操作</th>
+        </tr>
+        </thead>
+        <tbody id="table">
+        <?
+        foreach ($datas as $k1 => $v1) {?>
+            <tr>
+                <td><?=$v1["activity_id"]?></td>
+                <td><?=$v1["volunteer_id"]?></td>
+                <td><?=$v1["service_hour"]?>小时</td>
+                <td>
+                    <? foreach (ActivolunteerModel::$join_status as $k2 => $v2) { ?>
+                        <? if ($v1['join_status'] == $k2) echo $v2;?>
+                    <?}?>
+                </td>
+                <td><?=$v1["created_at"]?></td>
+                <td><?=$v1["updated_at"]?></td>
+                <td>
+                    <?if($v1['join_status'] == 0){?>
+                    <a class="btn btn-xs green" onclick="attend(<?=$v1['activity_id']?>,<?=$v1['volunteer_id']?>)"><i class="icon-hand-right"></i>&nbsp;确认参与</a>
+                    <?}else{?>
+                        <a class="btn btn-xs red""><i class="icon-hand-left"></i>&nbsp;已确认</a>
+                    <?}?>
+                    <a class="btn btn-xs yellow" onclick="reset(<?=$v1['activity_id']?>,<?=$v1['volunteer_id']?>)"><i class="icon-reply"></i>&nbsp;重置</a>
+                </td>
+            </tr>
+        <? } ?>
+        </tbody>
+    </table>
+    <?= $page->show() ?>
+</div>
+<script>
+    function attend(activity_id,volunteer_id) {
+        $.post('/admin/avmanager/confirm', {activity_id: activity_id,volunteer_id:volunteer_id}, function (d) {
+            alert(d.msg);
+            if (d.status) location.reload();
+        }, 'json');
+    }
+    function reset(activity_id,volunteer_id) {
+        $.post('/admin/avmanager/reset', {activity_id: activity_id,volunteer_id:volunteer_id}, function (d) {
+            alert(d.msg);
+            if (d.status) location.reload();
+        }, 'json');
+    }
+
+</script>
