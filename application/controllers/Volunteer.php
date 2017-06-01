@@ -2,15 +2,35 @@
 class VolunteerController extends Controller_Base {
 
     /**
-     * 个人主页
+     * 登录用户个人主页
     */
     public function indexAction()
     {
         $model_volunteer = new VolunteerModel();
+        $user_id = $this->user['id'];
 
         $datas = $this->_list($model_volunteer,"id={$this->user['id']}");
 
         $this->assign('datas',$datas);
+
+        $service_items = $model_volunteer->query("select a.id,a.caption,a.content,av.created_at,av.updated_at from activity_volunteer av,activity a where av.volunteer_id =$user_id and av.activity_id = a.id;");
+
+        $this->assign('service_items',$service_items);
+
+    }
+    /**
+     * 志愿者个人详情
+    */
+    public function volunteerdetailAction($id = 0){
+        $mVolunteer = new VolunteerModel();
+        if(!($id = (int)$id) || !$v1 = $mVolunteer->fRow($id)){
+            Msg::js("sorry～你访问的页面被外星人带走啦");
+        }
+        $this->assign("v1",$v1);
+
+        $service_items = $mVolunteer->query("select a.id,a.caption,a.content,av.created_at,av.updated_at from activity_volunteer av,activity a where av.volunteer_id =$id and av.activity_id = a.id;");
+
+        $this->assign('service_items',$service_items);
     }
 
     /**

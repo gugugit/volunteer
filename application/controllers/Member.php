@@ -27,7 +27,7 @@ class MemberController extends Controller_Base{
     public function memberdetailAction($id = 0){
         $model_member = new MemberModel();
         if(!($id = (int)$id) || !$value = $model_member->fRow($id)){
-            echo "sorry～你访问的页面被外星人带走啦";//这里有问题bug。
+           Msg::js("sorry～你访问的页面被外星人带走啦");
         }
         $this->assign("value",$value);
     }

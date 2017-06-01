@@ -38,13 +38,11 @@
                                 <img src="/img/1.jpg" height="100" width="100" id="avatarImage" />
                             </div>
                         </div>
-                        <?foreach ($datas as $k1 => $v1){?>
+
                         <h3 class="side-profile-name level-color-7"><?=$v1['username']?></h3>
                     </div>
                     <div class="profile-count-box">
                         <a class="btn btn-primary" href="/index/index/">返回首页</a>
-                        <a class="btn btn-primary" href="/volunteer/edit">编辑信息</a>
-                        <a class="btn btn-primary" href="/volunteer/changepw">修改密码</a>
                     </div>
 
                 </div>
@@ -96,14 +94,6 @@
                                 </dl>
                                 <dl>
                                     <dt>
-                                        我的学号
-                                    </dt>
-                                    <dd id="nicknamePart">
-                                        <?=$v1['student_id']?>
-                                    </dd>
-                                </dl>
-                                <dl>
-                                    <dt>
                                         我的学院
                                     </dt>
                                     <dd id="nicknamePart">
@@ -119,14 +109,6 @@
                                     </dt>
                                     <dd id="nicknamePart">
                                         <?=$v1['nation']?>
-                                    </dd>
-                                </dl>
-                                <dl>
-                                    <dt>
-                                        我的生日
-                                    </dt>
-                                    <dd>
-                                        <?=mb_substr($v1['birthday'],0,10)?>
                                     </dd>
                                 </dl>
                                 <dl>
@@ -153,15 +135,6 @@
                                         <?=$v1['email']?>
                                     </dd>
                                 </dl>
-                                <dl>
-                                    <dt>
-                                        个人电话
-                                    </dt>
-                                    <dd id="nicknamePart">
-                                        <?=$v1['mobile']?>
-                                    </dd>
-                                </dl>
-
 
                                 <dl>
                                     <dt>
@@ -173,10 +146,9 @@
                                 </dl>
 
                             </div>
-                            <?}?>
 
                             <div class="profile-caption">
-                                <h3 class="info-title prf-base">我参与的志愿活动</h3>
+                                <h3 class="info-title prf-base">参与的志愿活动</h3>
                             </div>
 
                             <div class="info-box set-msg-box">
@@ -184,26 +156,24 @@
                                 <table class="table table-hover table-responsive table-bordered">
                                     <thead>
                                     <tr class="success">
-                                    <th width="100">志愿名称</th>
-                                    <th width="100">报名时间</th>
-                                    <th width="80">参与时间</th>
+                                        <th width="100">志愿名称</th>
+                                        <th width="100">报名时间</th>
+                                        <th width="80">参与时间</th>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <?foreach ($service_items as $k => $v){?>
-                                    <tr class="warning">
-                                        <td><a href="/index/index/activitydetail/id/<?=$v['id']?>"><?=mb_substr($v['caption'],0,5,'utf-8')?></a></td>
-                                        <td><?=$v['created_at']?></td>
-                                        <td><?=$v['updated_at']?></td>
-                                    </tr>
+                                        <tr class="warning">
+                                            <td><a href="/index/index/activitydetail/id/<?=$v['id']?>"><?=mb_substr($v['caption'],0,5,'utf-8')?></a></td>
+                                            <td><?=$v['created_at']?></td>
+                                            <td><?=$v['updated_at']?></td>
+                                        </tr>
                                     <?}?>
                                     </tbody>
 
                                 </table>
 
                             </div>
-
-
                         </div>
                     </div>
                 </div>
