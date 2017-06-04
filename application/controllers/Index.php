@@ -31,6 +31,12 @@ class IndexController extends Controller_Base {
            $model_activolunteer = new ActivolunteerModel();
            $model_activity = new ActivityModel();
            $mActivity = new ActivityModel();
+           $model_volunteer = new VolunteerModel();
+
+           $volun_info = $model_volunteer->where("id={$_POST['volunteer_id']}")->fRow();
+           if($volun_info['honesty'] < 6){
+               Msg::ajax("您的诚信值低于6分，暂时不能报名参与志愿活动! 请及时联系我们，恢复诚信值！");
+           }
 
            $data = $model_activolunteer->field('activity_id')->table('activity_volunteer')->where("volunteer_id={$_POST['volunteer_id']}")->fList();
 

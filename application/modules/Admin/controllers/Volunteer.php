@@ -114,6 +114,19 @@ class VolunteerController extends Controller_Admin{
         }
     }
 
+    /**
+     * 恢复志愿者诚信值
+    */
+    public function resumeAction(){
+        $mVolunteer = new VolunteerModel();
+        if('POST' == $_SERVER['REQUEST_METHOD']){
+            if(!$mVolunteer->where("id={$_POST['id']}")->update(array('honesty' => '10'))){
+                Msg::ajax('恢复失败,请联系开发人员');
+            }
+            Msg::ajax('恢复成功',1);
+        }
+
+    }
 
 
 }

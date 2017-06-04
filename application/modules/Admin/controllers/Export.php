@@ -42,7 +42,7 @@ class ExportController extends Controller_Admin{
             $result = $mImport->input_csv($handle); //解析csv
             $len_result = count($result);
             if($len_result==0){
-                echo '没有任何数据！';
+                Msg::js("没有任何数据!");
                 exit;
             }
             $data_values ='';

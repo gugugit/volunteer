@@ -8,7 +8,7 @@
             <th>参与状态</th>
             <th>报名时间</th>
             <th>确认时间</th>
-            <th width="180px">操作</th>
+            <th width="230">操作</th>
         </tr>
         </thead>
         <tbody id="table">
@@ -28,6 +28,7 @@
                 <td>
                     <?if($v1['join_status'] == 0){?>
                     <a class="btn btn-xs green" onclick="attend(<?=$v1['activity_id']?>,<?=$v1['volunteer_id']?>)"><i class="icon-hand-right"></i>&nbsp;确认参与</a>
+                        <a class="btn btn-xs purple" onclick="honesty(<?=$v1['activity_id']?>,<?=$v1['volunteer_id']?>)"><i class="icon-thumbs-down"></i>&nbsp;未参与</a>
                     <?}else{?>
                         <a class="btn btn-xs red""><i class="icon-hand-left"></i>&nbsp;已确认</a>
                     <?}?>
@@ -48,6 +49,12 @@
     }
     function reset(activity_id,volunteer_id) {
         $.post('/admin/avmanager/reset', {activity_id: activity_id,volunteer_id:volunteer_id}, function (d) {
+            alert(d.msg);
+            if (d.status) location.reload();
+        }, 'json');
+    }
+    function honesty(activity_id,volunteer_id) {
+        $.post('/admin/avmanager/honesty', {activity_id: activity_id,volunteer_id:volunteer_id}, function (d) {
             alert(d.msg);
             if (d.status) location.reload();
         }, 'json');

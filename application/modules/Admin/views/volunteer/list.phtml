@@ -6,11 +6,12 @@
             <th>ID</th>
             <th>姓名</th>
             <th>电话</th>
+            <th>诚信值</th>
             <th>邮箱</th>
             <th>邮箱认证</th>
             <th>创建时间</th>
             <th>更新时间</th>
-            <th>操作</th>
+            <th width="200">操作</th>
         </tr>
         </thead>
         <tbody id="table">
@@ -20,6 +21,7 @@
                 <td><?=$v1["id"]?></td>
                 <td><a href="/admin/volunteer/detail/id/<?=$v1['id']?>"><?=$v1['username']?><i class="btn btn-sm icon-link"></i></a></td>
                 <td><?=$v1["mobile"]?></td>
+                <td><?=$v1["honesty"]?></td>
                 <td><?=$v1["email"]?></td>
                 <td>
                     <? foreach (VolunteerModel::$email_valid as $k2 => $v2) {
@@ -32,6 +34,7 @@
                 <td>
                     <a class="btn btn-xs blue" href="/admin/volunteer/edit/id/<?=$v1['id']?>"><i class="icon-edit"></i> 编辑</a>
                     <a class="btn btn-xs red" onclick="volunteerdel(<?=$v1['id']?>)"><i class="icon-remove"></i> 删除</a>
+                    <a class="btn btn-xs purple" onclick="resume(<?=$v1['id']?>)"><i class="icon-reply"></i> 恢复诚信</a>
                 </td>
             </tr>
         <? } ?>
@@ -47,5 +50,12 @@
                 if (d.status) location.reload();
             }, 'json');
         }
+    }
+
+    function resume(id) {
+        $.post('/admin/volunteer/resume', {id: id}, function (d) {
+            alert(d.msg);
+            if (d.status) location.reload();
+        }, 'json');
     }
 </script>

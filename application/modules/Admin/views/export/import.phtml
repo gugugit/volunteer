@@ -2,6 +2,25 @@
     .top-news a {padding: 0px;TEXT-DECORATION:none}
 </style>
 <div class="col-md-12 news-page blog-page">
+    <p>导入的CSV文件内容格式如下：</p>
+    <table class="table table-striped table-bordered table-hover dataTable">
+        <thead>
+        <tr>
+            <th width="300">姓名</th>
+            <th width="300">学号</th>
+        </tr>
+        </thead>
+        <tbody id="table">
+        <tr>
+            <td>郭海龙</td>
+            <td>2013014139</td>
+        </tr>
+        <tr>
+            <td>胡荣</td>
+            <td>2013014130</td>
+        </tr>
+        </tbody>
+    </table>
 
     <form method="post" action="" enctype="multipart/form-data">
         <div class="row">
@@ -13,7 +32,7 @@
                         <br/>
                         <br/>
                         <input type="file" name="file">
-                        <button class="btn blue margin-top-10" type="submit">导入CSV</button>
+                        <button class="btn blue margin-top-10" type="submit">开始导入</button>
 
                 </div>
             </div>

@@ -55,5 +55,19 @@ class AvmanagerController extends Controller_Admin{
         }
 
     }
+    /**
+     * 个人诚信值：默认10分 低于6分将不能报名参与志愿活动
+    */
+    public function honestyAction(){
+        $mvolunteer = new VolunteerModel();
+        if("POST" == $_SERVER['REQUEST_METHOD']){
+            $vdata= $mvolunteer->where("id={$_POST['volunteer_id']}")->fRow();
+            $new_vdata['honesty'] = $vdata['honesty'] - 1;
+            if(!$mvolunteer->where("id={$_POST['volunteer_id']}")->update(array('honesty' => $new_vdata['honesty']))){
+                Msg::ajax('失败,请联系开发人员');
+            }
+            Msg::ajax('已确认，该志愿者诚信值已减1。',1);
+        }
+    }
 
 }
