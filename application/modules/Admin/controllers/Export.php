@@ -3,14 +3,45 @@ class ExportController extends Controller_Admin{
 
     public $layout='admin';
     /**
-     * 信息导出首页
+     * 学生志愿服务时间导出
     */
     public function exportAction(){
         $this->seo('志愿者信息导出');
         $mVolunteer = new VolunteerModel();
         $mExport = new ExportModel();
         if('POST' == $_SERVER['REQUEST_METHOD']){
-            $result = $mVolunteer->query('select v.username,v.student_id,v.class,a.full_name,v.sex,v.service_hour from volunteer v,academy a where v.academy_id = a.id');
+
+           if('all_class'==$_POST['class_id'] && 'all_academy' == $_POST['academy_id'] && empty($_POST['start_time']) && empty($_POST['end_time'])) {
+               $sql = "select v.username,v.student_id,v.class,a.full_name,v.sex,v.service_hour from volunteer v,academy a where v.academy_id = a.id order by v.service_hour desc";
+           }
+           if(!empty($_POST['class_id']) && 'all_class'!=$_POST['class_id'] && !empty($_POST['academy_id']) && 'all_academy'!=$_POST['academy_id'] && empty($_POST['start_time'])
+               && empty($_POST['end_time'])){
+               $class_id = $_POST['class_id'];
+               $academy_id = $_POST['academy_id'];
+               $sql = "select v.username,v.student_id,v.class,a.full_name,v.sex,v.service_hour from volunteer v,academy a where v.academy_id = a.id and v.student_id like '$class_id%' and a.full_name like '%$academy_id%' order by v.service_hour desc";
+           }
+           if(!empty($_POST['class_id']) && 'all_class'!=$_POST['class_id'] && 'all_academy' == $_POST['academy_id'] && !empty($_POST['start_time']) && !empty($_POST['end_time'])){
+               $class_id = $_POST['class_id'];
+               $start_date = $_POST['start_time'];
+               $end_date = $_POST['end_time'];
+               $sql = "select v.username,v.student_id,v.class,a.full_name,v.sex,av.day_sum_hour service_hour from (select volunteer_id,sum(service_hour) day_sum_hour from activity_volunteer where  join_status = 1 and  updated_at>'$start_date' and updated_at<'$end_date' group by volunteer_id) av,volunteer v,academy a where av.volunteer_id = v.id and v.student_id like '$class_id%' and v.academy_id = a.id order by av.day_sum_hour desc";
+           }
+
+            if('all_class'==$_POST['class_id'] && !empty($_POST['academy_id']) && 'all_academy'!=$_POST['academy_id'] && !empty($_POST['start_time']) && !empty($_POST['end_time'])){
+                $academy_id = $_POST['academy_id'];
+                $start_date = $_POST['start_time'];
+                $end_date = $_POST['end_time'];
+                $sql = "select v.username,v.student_id,v.class,a.full_name,v.sex,av.day_sum_hour service_hour from (select volunteer_id,sum(service_hour) day_sum_hour from activity_volunteer where  join_status = 1 and  updated_at>'$start_date' and updated_at<'$end_date' group by volunteer_id) av,volunteer v,academy a where av.volunteer_id = v.id and a.full_name like '%$academy_id%' and  v.academy_id = a.id order by av.day_sum_hour desc";
+           }
+
+            if(!empty($_POST['class_id']) && 'all_class'!=$_POST['class_id'] && !empty($_POST['academy_id']) && 'all_academy'!=$_POST['academy_id'] && !empty($_POST['start_time']) && !empty($_POST['end_time'])){
+                $class_id = $_POST['class_id'];
+                $academy_id = $_POST['academy_id'];
+                $start_date = $_POST['start_time'];
+                $end_date = $_POST['end_time'];
+                $sql = "select v.username,v.student_id,v.class,a.full_name,v.sex,av.day_sum_hour service_hour from (select volunteer_id,sum(service_hour) day_sum_hour from activity_volunteer where  join_status = 1 and  updated_at>'$start_date' and updated_at<'$end_date' group by volunteer_id) av,volunteer v,academy a where av.volunteer_id = v.id and v.student_id like '$class_id%' and  a.full_name like '%$academy_id%' and  v.academy_id = a.id order by av.day_sum_hour desc";
+            }
+            $result = $mVolunteer->query($sql);
             $head_str = "姓名,学号,班级,学院,性别,志愿时间\n";
             $head_str = iconv('utf-8','gb2312',$head_str);
             foreach ($result as $k => $v){
@@ -28,6 +59,9 @@ class ExportController extends Controller_Admin{
         }
     }
 
+    /**
+     * 学生账号导入
+    */
     public function importAction(){
         $this->seo('志愿者信息导入');
         $mImport = new ExportModel();

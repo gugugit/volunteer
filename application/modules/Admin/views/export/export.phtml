@@ -12,38 +12,61 @@
 
                 <div class="post-comment">
 
-                    <button class="btn blue margin-top-10" type="submit">导出CSV</button>
+<!--                    年级选择-->
+                    <div class="form-group">
+                        <label class="control-label">年级：</label>
+                        <select name="class_id" style="width: 20%;">
+                            <option value="all_class">全部</option>
+                            <option value="2013">2013级</option>
+                            <option value="2014">2014级</option>
+                            <option value="2015">2015级</option>
+                            <option value="2016">2016级</option>
+                            <option value="2017">2017级</option>
+                        </select>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label class="control-label">学院：</label>
+                        <select name="academy_id" style="width: 20%;">
+                            <option value="all_academy">全部</option>
+                            <option value="化学工程学院">化学工程学院</option>
+                            <option value="材料科学与工程学院">材料科学与工程学院</option>
+                            <option value="机电工程学院">机电工程学院</option>
+                            <option value="信息科学与技术学院">信息科学与技术学院</option>
+                            <option value="经济管理学院">经济管理学院</option>
+                            <option value="理学院">理学院</option>
+                            <option value="文法学院">文法学院</option>
+                            <option value="生命科学与技术学院">生命科学与技术学院</option>
+                            <option value="国际教育学院">国际教育学院</option>
+                            <option value="能源学院">能源学院</option>
+                            <option value="巴黎居里工程师学院">巴黎居里工程师学院</option>
+                            <option value="侯德榜工程师学院">侯德榜工程师学院</option>
+                            <option value="职业技术学院">职业技术学院</option>
+                            <option value="继续教育学院">继续教育学院</option>
+                        </select>
+                    </div>
 
-<!--                    <div class="form-group">-->
-<!--                        <label class="control-label">选择年级:</label>-->
-<!--                        <select name="class_id">-->
-<!--                            <option value="2013">2013级</option>-->
-<!--                            <option value="2014">2014级</option>-->
-<!--                        </select>-->
-<!--                    </div>-->
-<!---->
-<!--                    <!--                    开始时间-->
-<!--                    <div class="control-group">-->
-<!--                        <label class="control-label">开始时间：</label>-->
-<!--                        <div class="controls input-append date form_time_start" data-date="" data-date-format="yyyy-mm-dd hh:ii:ss" data-link-field="dtp_input_start" data-link-format="yyyy-mm-dd hh:ii:ss">-->
-<!--                            <input size="30" type="text" value="" readonly>-->
-<!--                            <span class="add-on"><i class="icon-remove"></i></span>-->
-<!--                            <span class="add-on"><i class="icon-th"></i></span>-->
-<!--                        </div>-->
-<!--                        <input type="hidden" name="start_time" id="dtp_input_start" value="" /><br/>-->
-<!--                    </div>-->
-<!--                    <!--                        结束时间-->
-<!--                    <div class="control-group">-->
-<!--                        <label class="control-label">结束时间：</label>-->
-<!--                        <div class="controls input-append date form_time_end" data-date="" data-date-format="yyyy-mm-dd hh:ii:ss" data-link-field="dtp_input_end" data-link-format="yyyy-mm-dd hh:ii:ss">-->
-<!--                            <input size="30" type="text" value="" readonly>-->
-<!--                            <span class="add-on"><i class="icon-remove"></i></span>-->
-<!--                            <span class="add-on"><i class="icon-th"></i></span>-->
-<!--                        </div>-->
-<!--                        <input type="hidden" name="end_time" id="dtp_input_end" value="" /><br/>-->
-<!--                    </div>-->
+<!--                                        开始时间-->
+                    <div class="control-group">
+                        <label class="control-label">开始时间：</label>
+                        <div class="controls input-append date form_time_start" data-date="" data-date-format="yyyy-mm-dd hh:ii:ss" data-link-field="dtp_input_start" data-link-format="yyyy-mm-dd hh:ii:ss">
+                            <input size="30" type="text" value="" readonly>
+                            <span class="add-on"><i class="icon-remove"></i></span>
+                            <span class="add-on"><i class="icon-th"></i></span>
+                        </div>
+                        <input type="hidden" name="start_time" id="dtp_input_start" value="" />
+                        <br/>
+                    </div>
+<!--                                            结束时间-->
+                    <div class="control-group">
+                        <label class="control-label">结束时间：</label>
+                        <div class="controls input-append date form_time_end" data-date="" data-date-format="yyyy-mm-dd hh:ii:ss" data-link-field="dtp_input_end" data-link-format="yyyy-mm-dd hh:ii:ss">
+                            <input size="30" type="text" value="" readonly>
+                            <span class="add-on"><i class="icon-remove"></i></span>
+                            <span class="add-on"><i class="icon-th"></i></span>
+                        </div>
+                        <input type="hidden" name="end_time" id="dtp_input_end" value="" />
+                        <br/>
+                    </div>
 
-<!--                    <button class="btn blue margin-top-10" type="submit">导出</button>-->
+                    <button class="btn blue margin-top-10" type="submit">确认导出</button>
 
                 </div>
             </div>
