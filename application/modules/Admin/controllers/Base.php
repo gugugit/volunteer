@@ -23,16 +23,12 @@ class BaseController extends Controller_Admin{
         $this->seo("基地添加");
     }
 
-
     /**
      * 基地编辑
     */
-
     public function editAction($id = 0){
         $model_base = new BaseModel();
         $this->seo("基地编辑");
-
-
         if('POST' == $_SERVER['REQUEST_METHOD']){
 
           if(empty($id)){
@@ -58,9 +54,18 @@ class BaseController extends Controller_Admin{
               $_POST['id'] = $id;
               unset($_POST['img']);
               $model_base->update($_POST);
-              Msg::js('保存成功','/admin/base/list');
+              $upload = $_FILES['img']['tmp_name'];
+              if(!empty($upload[0])){
+                  $path = APP_PATH . '/public/upload/base/' .$id.'/';
+                  Helper\File::deldir($path);
+                  $model_base->where("id={$id}")->update(['img'=>"/upload/base/{$id}/0.gif"]);
+                  if(Helper\File::upimgs($path,'img'))  Msg::js('更新成功','/admin/base/list');
+              }
+              Msg::js('更新成功','/admin/base/list');
+
           }else{
               $id = $model_base->insert($_POST);
+
               $upload = $_FILES['img']['tmp_name'];
 
               if(!empty($upload)){
