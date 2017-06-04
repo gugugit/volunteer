@@ -60,12 +60,19 @@ class MemberController extends Controller_Admin{
                 $_POST['id'] = $id;
                 unset($_POST['img']);
                 $model_base->update($_POST);
+                $upload = $_FILES['img']['tmp_name'];
+                if(!empty($upload[0])){
+                    $path = APP_PATH . '/public/upload/member/' .$id.'/';
+                    Helper\File::deldir($path);
+                    $model_base->where("id={$id}")->update(['img'=>"/upload/member/{$id}/0.gif"]);
+                    if(Helper\File::upimgs($path,'img'))  Msg::js('更新成功','/admin/member/list');
+                }
                 Msg::js('更新成功','/admin/member/list');
+
             }else{
                 $id = $model_base->insert($_POST);
                 $upload = $_FILES['img']['tmp_name'];
-
-                if(!empty($upload)){
+                if(!empty($upload[0])){
                     $path = APP_PATH . '/public/upload/member/' . $id . '/';
                     $model_base->where("id={$id}")->update(['img'=>"/upload/member/{$id}/0.gif"]);
                     if(Helper\File::upimgs($path,'img'))  Msg::js('添加成功','/admin/member/list');

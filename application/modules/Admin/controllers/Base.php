@@ -65,10 +65,8 @@ class BaseController extends Controller_Admin{
 
           }else{
               $id = $model_base->insert($_POST);
-
               $upload = $_FILES['img']['tmp_name'];
-
-              if(!empty($upload)){
+              if(!empty($upload[0])){
                   $path = APP_PATH . '/public/upload/base/' . $id . '/';
                   $model_base->where("id={$id}")->update(['img'=>"/upload/base/{$id}/0.gif"]);
                   if(Helper\File::upimgs($path,'img'))  Msg::js('添加成功','/admin/base/list');

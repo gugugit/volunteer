@@ -53,16 +53,25 @@ class ActivityController extends Controller_Admin{
                 $_POST['updated_at'] = date('Y-m-d h:i:s',time());
             }
             $_POST['img'] = '/uploag/1.jpg';
+
             if($id){
                 $_POST['id'] = $id;
                 unset($_POST['img']);
                 $model_activity->update($_POST);
+                $upload = $_FILES['img']['tmp_name'];
+                if(!empty($upload[0])){
+                    $path = APP_PATH . '/public/upload/activity/' .$id.'/';
+                    Helper\File::deldir($path);
+                    $model_activity->where("id={$id}")->update(['img'=>"/upload/activity/{$id}/0.gif"]);
+                    if(Helper\File::upimgs($path,'img'))  Msg::js('更新成功','/admin/activity/list');
+                }
                 Msg::js('更新成功','/admin/activity/list');
+
             }else{
                 $id = $model_activity->insert($_POST);
                 $upload = $_FILES['img']['tmp_name'];
-                if(!empty($upload)){
-                    $path = APP_PATH . '/public/upload/activity/' . $id . '/';
+                if(!empty($upload[0])){
+                    $path = APP_PATH . '/public/upload/activity/'.$id.'/';
                     $model_activity->where("id={$id}")->update(['img'=>"/upload/activity/{$id}/0.gif"]);
                     if(Helper\File::upimgs($path,'img'))  Msg::js('添加成功','/admin/activity/list');
                 }
