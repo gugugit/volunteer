@@ -10,7 +10,7 @@ class MemberController extends Controller_Base{
             if(empty($_POST['soso'])||!Helper\Validate::safe($_POST['soso'])){
                 Msg::js("请输入成员姓名");
             }
-            $datas = $this->_list($mMember,"L=8&name=LIKE*{$_POST['soso']}*");
+            $datas = $this->_list($mMember,"OB=sort_id&L=8&name=LIKE*{$_POST['soso']}*");
             if(empty($datas)){
                 Msg::js("没有您要查询的成员信息，请重新输入");
             }
