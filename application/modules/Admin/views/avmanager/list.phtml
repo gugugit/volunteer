@@ -18,7 +18,7 @@
                 <td><?=$v1["activity_id"]?></td>
                 <td><a href="/admin/volunteer/detail/id/<?=$v1["volunteer_id"]?>"><?=$v1["volunteer_id"]?><i class="btn btn-sm icon-link"></i></a></td>
                 <td><?=$v1["service_hour"]?>小时</td>
-                <td>
+                <td class="success">
                     <? foreach (ActivolunteerModel::$join_status as $k2 => $v2) { ?>
                         <? if ($v1['join_status'] == $k2) echo $v2;?>
                     <?}?>
@@ -26,7 +26,7 @@
                 <td><?=$v1["created_at"]?></td>
                 <td><?=$v1["updated_at"]?></td>
                 <td>
-                    <?if($v1['join_status'] == 0){?>
+                    <?if($v1['join_status'] == 3){?>
                     <a class="btn btn-xs green" onclick="attend(<?=$v1['activity_id']?>,<?=$v1['volunteer_id']?>)"><i class="icon-hand-right"></i>&nbsp;确认参与</a>
                         <a class="btn btn-xs purple" onclick="honesty(<?=$v1['activity_id']?>,<?=$v1['volunteer_id']?>)"><i class="icon-thumbs-down"></i>&nbsp;未参与</a>
                     <?}else{?>
@@ -38,6 +38,11 @@
         <? } ?>
         </tbody>
     </table>
+
+    <form method="post" action="" enctype="multipart/form-data">
+
+        <button class="btn margin-top-10 btn-success" type="submit">导出</button>
+    </form>
     <?= $page->show() ?>
 </div>
 <script>

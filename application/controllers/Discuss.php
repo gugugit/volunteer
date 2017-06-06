@@ -23,7 +23,6 @@ class DiscussController extends Controller_Base{
 
     }
 
-
     /**
      * 分享列表
     */
@@ -64,9 +63,7 @@ class DiscussController extends Controller_Base{
     public function tagsAction(){
         $model_tags = new TagsModel();
         if ('POST' == $_SERVER['REQUEST_METHOD']) {
-
             $data = $model_tags->field('share_id')->table('tags')->where("volunteer_id={$_POST['volunteer_id']}")->fList();
-
             foreach ($data as $value){
                 if($value['share_id'] == $_POST['share_id']){
                     Msg::ajax("你已经点过赞了，快去看看其他同学的精彩分享吧！");
@@ -105,7 +102,5 @@ class DiscussController extends Controller_Base{
         # 返回
         exit("{'url':'" . $fileName . "','title':'" . htmlspecialchars($_POST['pictitle'], ENT_QUOTES) . "','original':'" . htmlspecialchars($_POST['fileName'], ENT_QUOTES) . "','state':'" . $state . "'}");
     }
-
-
 
 }

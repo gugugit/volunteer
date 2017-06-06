@@ -8,11 +8,38 @@ class AvmanagerController extends Controller_Admin{
     */
     public function listAction(){
         $this->seo('参与管理');
-
+        $mExport = new ExportModel();
         $mAvmanager = new ActivolunteerModel();
-        $this->search('activity_id', array('activity_id' => '活动ID','volunteer_id'=>'志愿者ID'));
-        $datas = $this->_list($mAvmanager);
+        $mVolunteer = new VolunteerModel();
+        $mActivity = new ActivityModel();
+        $this->search('activity_id', array('activity_id' => '活动ID','volunteer_id'=>'志愿者ID','join_status'=>'参与状态1|2|3'));
+        $datas = $this->_list($mAvmanager,'L=20');
         $this->assign('datas',$datas);
+
+        if("POST" == $_SERVER['REQUEST_METHOD']){
+            $head_str = "活动名称,志愿者,志愿时长,参与状态,报名时间\n";
+            $head_str = iconv('utf-8','gb2312',$head_str);
+            foreach ($datas as $k => $v){
+                if($v['join_status'] == 1) $v['join_status'] = '已参与';
+                if($v['join_status'] == 2) $v['join_status'] = '未参与';
+                if($v['join_status'] == 3) $v['join_status'] = '待参与';
+
+                $activity_datas = $mActivity->where("id={$v['activity_id']}")->fRow();
+                $volunteer_datas = $mVolunteer->where("id={$v['volunteer_id']}")->fRow();
+                $v['activity_id'] = $activity_datas['caption'];
+                $v['volunteer_id'] = $volunteer_datas['username'];
+                $activity_id = iconv('utf-8','gb2312',$v['activity_id']); //中文转码
+                $volunteer_id = iconv('utf-8','gb2312',$v['volunteer_id']);
+                $service_hour = iconv('utf-8','gb2312',$v['service_hour']);
+                $join_status = iconv('utf-8','gb2312',$v['join_status']);
+                $created_at = iconv('utf-8','gb2312',$v['created_at']);
+                $head_str .= $activity_id.",".$volunteer_id.",".$service_hour.",".$join_status.",".$created_at."\n"; //用引文逗号分开
+            }
+            $filename = date('Y-m-d').'.csv'; //设置文件名
+            $mExport->export_csv($filename,$head_str);
+
+        }
+
     }
     /**
      * 活动参与确认
@@ -42,7 +69,7 @@ class AvmanagerController extends Controller_Admin{
         $manager = new ActivolunteerModel();
         $mvolunteer = new VolunteerModel();
         if('POST' == $_SERVER['REQUEST_METHOD']){
-            if(!$manager->where("activity_id={$_POST['activity_id']} and volunteer_id={$_POST['volunteer_id']}")->update(array('join_status' => '0'))){
+            if(!$manager->where("activity_id={$_POST['activity_id']} and volunteer_id={$_POST['volunteer_id']}")->update(array('join_status' => '3'))){
                 Msg::ajax('重置失败,请联系开发人员');
             }
             $avdata= $manager->where("activity_id={$_POST['activity_id']} and volunteer_id={$_POST['volunteer_id']}")->fRow();
