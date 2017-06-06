@@ -49,11 +49,12 @@
                                     <form id="form-tags">
                                         <input type="hidden" name="share_id" value="<?=$v['id']?>">
                                         <input type="hidden" name="volunteer_id" value="<?=$this->user['id']?>">
-                                        <input type="submit" class="js-post-like nc-req-auth" value="赞">
+                                        <input type="submit" class="js-post-like nc-req-auth" value="已赞">
                                         <?=$v['tags']?>
-                                    </form>
+                                        <span class="feed-legend-pipe">|</span>
+                                        <span>浏览<span class="feed-legend-num"><?=$v['page_view']?></span></span>
 
-<!--                                    <span>浏览<span class="feed-legend-num">12717</span></span>-->
+                                    </form>
 
                                 </div>
                             </div>

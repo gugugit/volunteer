@@ -33,19 +33,33 @@ class IndexController extends Controller_Base {
            $mActivity = new ActivityModel();
            $model_volunteer = new VolunteerModel();
 
-           $volun_info = $model_volunteer->where("id={$_POST['volunteer_id']}")->fRow();
-           if($volun_info['honesty'] < 6){
-               Msg::ajax("您的诚信值低于6分，暂时不能报名参与志愿活动! 请及时联系我们，恢复诚信值！");
-           }
-
-           $data = $model_activolunteer->field('activity_id')->table('activity_volunteer')->where("volunteer_id={$_POST['volunteer_id']}")->fList();
-
-           foreach ($data as $value){
-               if($value['activity_id'] == $_POST['activity_id']){
-                   Msg::ajax("你已经报名了该活动，请勿重复报名");
-               }
-           }
+//           $volun_info = $model_volunteer->where("id={$_POST['volunteer_id']}")->fRow();
+//           if($volun_info['honesty'] < 6){
+//               Msg::ajax("您的诚信值低于6分，暂时不能报名参与志愿活动! 请及时联系我们，恢复诚信值！");
+//           }
+//
+//           $data = $model_activolunteer->field('activity_id')->table('activity_volunteer')->where("volunteer_id={$_POST['volunteer_id']}")->fList();
+//
+//           foreach ($data as $value){
+//               if($value['activity_id'] == $_POST['activity_id']){
+//                   Msg::ajax("你已经报名了该活动，请勿重复报名");
+//               }
+//           }
           if($_POST['volunteer_id']){
+
+              $volun_info = $model_volunteer->where("id={$_POST['volunteer_id']}")->fRow();
+              if($volun_info['honesty'] < 6){
+                  Msg::ajax("您的诚信值低于6分，暂时不能报名参与志愿活动! 请及时联系我们，恢复诚信值！");
+              }
+
+              $data = $model_activolunteer->field('activity_id')->table('activity_volunteer')->where("volunteer_id={$_POST['volunteer_id']}")->fList();
+
+              foreach ($data as $value){
+                  if($value['activity_id'] == $_POST['activity_id']){
+                      Msg::ajax("你已经报名了该活动，请勿重复报名");
+                  }
+              }
+
               $data= $mActivity->where("id={$_POST['activity_id']}")->fRow();
               $_POST['service_hour'] = $data['service_hour'];
               $model_activolunteer->insert($_POST);

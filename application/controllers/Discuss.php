@@ -30,7 +30,7 @@ class DiscussController extends Controller_Base{
     public function listAction(){
 
         $model_discuss = new DiscussModel();
-        $datas = $model_discuss->query('select vs.username,vs.share_id,vs.caption,vs.content,vs.created_at,tn.tags_num from (select v.username,s.id share_id,s.caption,s.content,s.created_at from share s,volunteer v where v.id = s.volunteer_id)vs left join (select t.share_id,count(*) tags_num from tags t left join share s on s.id = t.share_id group by t.share_id)tn on tn.share_id = vs.share_id order by vs.created_at desc');
+        $datas = $model_discuss->query('select vs.username,vs.share_id,vs.caption,vs.content,vs.page_view,vs.created_at,tn.tags_num from (select v.username,s.id share_id,s.caption,s.content,s.page_view,s.created_at from share s,volunteer v where v.id = s.volunteer_id)vs left join (select t.share_id,count(*) tags_num from tags t left join share s on s.id = t.share_id group by t.share_id)tn on tn.share_id = vs.share_id order by vs.created_at desc');
         $this->assign('datas',$datas);
     }
 
@@ -41,7 +41,12 @@ class DiscussController extends Controller_Base{
         $model_discuss = new DiscussModel();
         $model_tags = new TagsModel();
         if($id){
-            $datas = $model_discuss->query("select s.id,v.username,s.content,s.caption,s.created_at from volunteer v,share s where s.volunteer_id=v.id and s.id={$id}");
+
+            $page_view = $model_discuss->fRow($id);
+            $page_view['page_view'] = $page_view['page_view'] + 1;
+            $model_discuss->where("id={$id}")->update(array("page_view" => $page_view['page_view']));
+
+            $datas = $model_discuss->query("select s.id,v.username,s.page_view,s.content,s.caption,s.created_at from volunteer v,share s where s.volunteer_id=v.id and s.id={$id}");
 
             $share_tags_num =  $model_tags->query("select count(*) tags from tags where share_id={$id}");
 
