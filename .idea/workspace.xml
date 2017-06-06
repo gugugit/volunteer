@@ -20,7 +20,7 @@
     <favorites_list name="helloyaf" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -82,7 +82,6 @@
         <option value="$PROJECT_DIR$/application/models/Export.php" />
         <option value="$PROJECT_DIR$/application/models/Avmanager.php" />
         <option value="$PROJECT_DIR$/application/modules/Admin/views/avmanager/confirm.phtml" />
-        <option value="$PROJECT_DIR$/application/models/Activolunteer.php" />
         <option value="$PROJECT_DIR$/application/views/rank.phtml" />
         <option value="$PROJECT_DIR$/application/views/foot.phtml" />
         <option value="$PROJECT_DIR$/public/css/aboutUs.css" />
@@ -109,24 +108,25 @@
         <option value="$PROJECT_DIR$/application/modules/Admin/controllers/Activity.php" />
         <option value="$PROJECT_DIR$/application/modules/Admin/views/export/import.phtml" />
         <option value="$PROJECT_DIR$/application/modules/Admin/views/avmanager/list.phtml" />
-        <option value="$PROJECT_DIR$/application/modules/Admin/controllers/Avmanager.php" />
         <option value="$PROJECT_DIR$/application/modules/Admin/controllers/Volunteer.php" />
         <option value="$PROJECT_DIR$/application/modules/Admin/views/volunteer/list.phtml" />
         <option value="$PROJECT_DIR$/application/views/layouts/admin.phtml" />
         <option value="$PROJECT_DIR$/application/views/rank/ranking.phtml" />
         <option value="$PROJECT_DIR$/application/views/rank/detailday.phtml" />
         <option value="$PROJECT_DIR$/application/controllers/Rank.php" />
-        <option value="$PROJECT_DIR$/application/modules/Admin/controllers/Export.php" />
         <option value="$PROJECT_DIR$/application/modules/Admin/views/export/export.phtml" />
         <option value="$PROJECT_DIR$/application/views/member/index.phtml" />
         <option value="$PROJECT_DIR$/application/controllers/Member.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Index.php" />
         <option value="$PROJECT_DIR$/application/views/discuss/list.phtml" />
         <option value="$PROJECT_DIR$/application/views/discuss/detail.phtml" />
         <option value="$PROJECT_DIR$/application/controllers/Discuss.php" />
         <option value="$PROJECT_DIR$/application/views/news/list.phtml" />
         <option value="$PROJECT_DIR$/application/views/news/detail.phtml" />
         <option value="$PROJECT_DIR$/application/controllers/News.php" />
+        <option value="$PROJECT_DIR$/application/models/Activolunteer.php" />
+        <option value="$PROJECT_DIR$/application/modules/Admin/controllers/Avmanager.php" />
+        <option value="$PROJECT_DIR$/application/modules/Admin/controllers/Export.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Index.php" />
       </list>
     </option>
   </component>
@@ -198,10 +198,38 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helloyaf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helloyaf" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="conf" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helloyaf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helloyaf" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -380,12 +408,14 @@
       <workItem from="1496563377678" duration="19201000" />
       <workItem from="1496675092637" duration="112000" />
       <workItem from="1496715317916" duration="96000" />
-      <workItem from="1496721813405" duration="2279000" />
+      <workItem from="1496721813405" duration="5413000" />
+      <workItem from="1496738419060" duration="368000" />
+      <workItem from="1496751358106" duration="1253000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="431975000" />
+    <option name="totallyTimeSpent" value="436730000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="729" extended-state="6" />
@@ -611,20 +641,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/Admin/controllers/Avmanager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="33" column="32" lean-forward="true" selection-start-line="30" selection-start-column="11" selection-end-line="33" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/Admin/views/avmanager/list.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="55" column="4" lean-forward="false" selection-start-line="55" selection-start-column="4" selection-end-line="60" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/layouts/admin.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
@@ -681,20 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/Admin/views/export/export.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="26" lean-forward="false" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/Admin/controllers/Export.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/member/index.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
@@ -714,7 +716,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -722,7 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -730,24 +730,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Activolunteer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="6" lean-forward="false" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="30" column="44" lean-forward="false" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
-          <folding>
-            <marker date="1496675192000" expanded="true" signature="2496:2538" ph="select alrea... activity" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -755,18 +737,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="6" lean-forward="false" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Volunteer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="63" column="13" lean-forward="true" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
-          <folding>
-            <marker date="1496304648000" expanded="true" signature="383:538" ph="select a.id,... activity_volunteer" />
-            <marker date="1496304648000" expanded="true" signature="929:1079" ph="select a.id,... activity_volunteer" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -774,7 +744,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
           <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -782,7 +751,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="59" column="61" lean-forward="true" selection-start-line="59" selection-start-column="61" selection-end-line="59" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -790,7 +758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="6" lean-forward="false" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -798,7 +765,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="46" column="57" lean-forward="true" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -806,14 +772,77 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="33" lean-forward="true" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/discuss/detail.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="48" column="57" lean-forward="true" selection-start-line="48" selection-start-column="57" selection-end-line="48" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Activolunteer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="39" lean-forward="true" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/Admin/controllers/Avmanager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="59" column="27" lean-forward="false" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/Admin/views/avmanager/list.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="25" column="47" lean-forward="true" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/Admin/views/export/export.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="26" lean-forward="false" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/Admin/controllers/Export.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="93" column="28" lean-forward="false" selection-start-line="93" selection-start-column="28" selection-end-line="93" selection-end-column="28" />
+          <folding>
+            <marker date="1496738784000" expanded="true" signature="490:643" ph="select v.use... volunteer" />
+            <marker date="1496738784000" expanded="true" signature="1004:1229" ph="select v.use... volunteer" />
+            <marker date="1496738784000" expanded="true" signature="1594:2006" ph="select v.use... volunteer_id" />
+            <marker date="1496738784000" expanded="true" signature="1686:1862" ph="select volun... activity_volunteer" />
+            <marker date="1496738784000" expanded="true" signature="2381:2796" ph="select v.use... volunteer_id" />
+            <marker date="1496738784000" expanded="true" signature="2473:2649" ph="select volun... activity_volunteer" />
+            <marker date="1496738784000" expanded="true" signature="3249:3700" ph="select v.use... volunteer_id" />
+            <marker date="1496738784000" expanded="true" signature="3341:3517" ph="select volun... activity_volunteer" />
+            <marker date="1496738784000" expanded="true" signature="5846:5909" ph="insert into volunteer... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="45" column="46" lean-forward="false" selection-start-line="45" selection-start-column="46" selection-end-line="45" selection-end-column="46" />
+          <folding>
+            <marker date="1496751892000" expanded="true" signature="1921:1963" ph="select alrea... activity" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Discuss.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="38" column="6" lean-forward="true" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
+        <state relative-caret-position="135">
+          <caret line="39" column="3" lean-forward="false" selection-start-line="39" selection-start-column="3" selection-end-line="58" selection-end-column="5" />
           <folding>
             <marker date="1496723444000" expanded="true" signature="738:1146" ph="select vs.us... username" />
             <marker date="1496723444000" expanded="true" signature="836:965" ph="select v.use... share" />
@@ -824,11 +853,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/discuss/detail.phtml">
+    <entry file="file://$PROJECT_DIR$/application/controllers/Volunteer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="48" column="57" lean-forward="true" selection-start-line="48" selection-start-column="57" selection-end-line="48" selection-end-column="57" />
-          <folding />
+        <state relative-caret-position="384">
+          <caret line="50" column="5" lean-forward="true" selection-start-line="38" selection-start-column="4" selection-end-line="50" selection-end-column="5" />
+          <folding>
+            <marker date="1496304648000" expanded="true" signature="383:538" ph="select a.id,... activity_volunteer" />
+            <marker date="1496304648000" expanded="true" signature="929:1079" ph="select a.id,... activity_volunteer" />
+          </folding>
         </state>
       </provider>
     </entry>
