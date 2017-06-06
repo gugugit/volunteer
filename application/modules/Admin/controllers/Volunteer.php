@@ -55,10 +55,16 @@ class VolunteerController extends Controller_Admin{
 
              if($id){
                  $_POST['id'] = $id;
+                 $salt = rand(100000, 999999);
+                 $_POST['password'] = VolunteerModel::saltpw($_POST['password'],$salt);
+                 $_POST['salt'] = $salt;
                  $model_volunteer->update($_POST);
                  Msg::js('更新成功','/admin/volunteer/list');
 
              }else{
+                 $salt = rand(100000, 999999);
+                 $_POST['password'] = VolunteerModel::saltpw($_POST['password'],$salt);
+                 $_POST['salt'] = $salt;
                  $model_volunteer->insert($_POST);
                  Msg::js('添加成功','/admin/volunteer/list');
              }
