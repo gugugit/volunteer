@@ -164,4 +164,28 @@ class VolunteerController extends Controller_Base {
         }
     }
 
+    /**
+     *导出个人志愿信息
+    */
+    public function exportAction(){
+        $mExport = new ExportModel();
+        $mVolunteer = new VolunteerModel();
+        if("POST" == $_SERVER['REQUEST_METHOD']){
+            $id = $_POST['volunteer_id'];
+            $result = $mVolunteer->query("select a.id,a.caption,av.created_at,av.updated_at from activity_volunteer av,activity a where av.volunteer_id =$id and av.activity_id = a.id");
+            $head_str = "志愿名称,报名时间,参与时间\n";
+            $head_str = iconv('utf-8','gb2312',$head_str);
+            foreach ($result as $k => $v){
+                $caption = iconv('utf-8','gb2312',$v['caption']); //中文转码
+                $created_at = iconv('utf-8','gb2312',$v['created_at']);
+                $updated_at = iconv('utf-8','gb2312',$v['updated_at']);
+                $head_str .= $caption.",".$created_at.",".$updated_at."\n"; //用引文逗号分开
+            }
+            $filename = date('Y-m-d').'.csv'; //设置文件名
+            $mExport->export_csv($filename,$head_str);
+
+        }
+
+    }
+
 }
