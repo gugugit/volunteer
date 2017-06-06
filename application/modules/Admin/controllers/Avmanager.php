@@ -17,7 +17,7 @@ class AvmanagerController extends Controller_Admin{
         $this->assign('datas',$datas);
 
         if("POST" == $_SERVER['REQUEST_METHOD']){
-            $head_str = "活动名称,志愿者,志愿时长,参与状态,报名时间\n";
+            $head_str = "活动名称,志愿者,联系电话,志愿时长,参与状态,报名时间\n";
             $head_str = iconv('utf-8','gb2312',$head_str);
             foreach ($datas as $k => $v){
                 if($v['join_status'] == 1) $v['join_status'] = '已参与';
@@ -28,12 +28,15 @@ class AvmanagerController extends Controller_Admin{
                 $volunteer_datas = $mVolunteer->where("id={$v['volunteer_id']}")->fRow();
                 $v['activity_id'] = $activity_datas['caption'];
                 $v['volunteer_id'] = $volunteer_datas['username'];
+                $v['mobile'] = $volunteer_datas['mobile'];
+
                 $activity_id = iconv('utf-8','gb2312',$v['activity_id']); //中文转码
                 $volunteer_id = iconv('utf-8','gb2312',$v['volunteer_id']);
+                $mobile = iconv('utf-8','gb2312',$v['mobile']);
                 $service_hour = iconv('utf-8','gb2312',$v['service_hour']);
                 $join_status = iconv('utf-8','gb2312',$v['join_status']);
                 $created_at = iconv('utf-8','gb2312',$v['created_at']);
-                $head_str .= $activity_id.",".$volunteer_id.",".$service_hour.",".$join_status.",".$created_at."\n"; //用引文逗号分开
+                $head_str .= $activity_id.",".$volunteer_id.",".$mobile.",".$service_hour.",".$join_status.",".$created_at."\n"; //用引文逗号分开
             }
             $filename = date('Y-m-d').'.csv'; //设置文件名
             $mExport->export_csv($filename,$head_str);
